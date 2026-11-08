@@ -24,10 +24,11 @@ Depois abra `http://localhost:8000`.
 
 ## Editar
 
-- **Contato:** em `js/dados.js`, preencha um canal (`whatsapp`, `email` ou `instagram`). A seção “Conversa” mostra um único botão com o primeiro canal preenchido. Com todos vazios, nenhum botão aparece.
-- **Projeto:** no `index.html`, cada `<article class="vitrine">` tem nome, tipo, até quatro detalhes curtos, o link e um mosaico de 5 peças (`<figure class="peca">`). `peca--alta` ocupa duas linhas, `peca--larga` duas colunas; `--pos` escolhe o recorte da imagem.
-- **Novo projeto (ex.: Camisa em Campo):** copie uma vitrine, troque textos e capturas e ajuste a cor de identidade em `style="--projeto: #..."`. Para aparecer na chegada, acrescente uma `<figure class="palco__cena">` com uma captura de computador e uma de celular.
-- **Cores, tipografia e espaçamentos:** no topo de `css/estilo.css`.
+- **Contato:** em `js/dados.js` (WhatsApp, e-mail e local). Os atalhos da abertura, os cartões de contato com botão de copiar e o botão principal são montados a partir desses dados.
+- **Projeto:** no `index.html`, cada `<article class="projeto">` tem selos, nome, uma frase, três destaques, tecnologias, link e um painel com três capturas (computador e dois celulares). Logo abaixo, `<div class="detalhes">` reúne três cartões de detalhe; `--pos` escolhe o recorte da imagem.
+- **Novo projeto (ex.: Camisa em Campo):** copie um `article.projeto` e o `div.detalhes` seguinte, troque textos e capturas e atualize o número “(02)” e o cartão “Sites no ar”.
+- **Números:** a seção `.numeros` usa só fatos verificáveis dos projetos. Ao mudar um projeto, revise esses números.
+- **Cores e fontes:** no topo de `css/estilo.css`.
 
 ## Capturas
 
@@ -45,12 +46,10 @@ A conversão para WebP usa Python com Pillow (`pip install pillow`). Confira as 
 
 ## Sistema visual (resumo)
 
-- **Cor:** o preto domina, em quatro profundidades (parede, fundo, superfície, linha). O roxo dá atmosfera e luz. O vermelho é o acento: foco do teclado, chave escolhida e botão de contato. Os projetos mantêm as cores próprias nas capturas.
-- **Largura total:** as seções ocupam a tela inteira; só a margem lateral (`--borda`, de 16 a 80 px) acompanha a janela. Tipografia e espaços fluidos com `clamp()`.
-- **Mosaico:** grade de 4 colunas com linhas de mesma altura (2 colunas no celular), para as peças sempre alinharem.
-- **Tipografia:** Fraunces nos títulos, Schibsted Grotesk no texto.
-- **Porta-chaves:** passo dos ganchos = largura da cabeça + 21 px. As hastes crescem em 1 · 1,13 · 1,272 · 1,414.
-- **Movimento:** a resposta das chaves (sobe 3 px, gira 2° e acende), a troca do palco a cada 5 s (para ao passar o mouse, focar ou escolher) e a troca suave de estado no passo a passo e no seletor. Tudo é desativado com “reduzir movimento”.
+- **Estilo:** escuro e tecnológico, com grade de pontos, cards de borda fina, etiquetas em fonte mono (Space Mono) e títulos em Oxanium.
+- **Cor:** o roxo faz a luz e os destaques; o vermelho é sinal e ação (Contato, privacidade, botão do WhatsApp). As capturas mantêm as cores de cada projeto.
+- **Porta-chaves:** placa de metal parafusada com quatro chaves de silhuetas diferentes e etiquetas esmaltadas. Depois da abertura, a doca flutuante embaixo repete as quatro chaves em miniatura e marca a seção atual.
+- **Movimento:** as chaves respondem ao mouse e ao foco, a faixa de texto corre (para ao passar o mouse) e o passo a passo e o seletor trocam de estado suavemente. Tudo é desativado com “reduzir movimento”.
 
 ## Publicar no GitHub Pages
 

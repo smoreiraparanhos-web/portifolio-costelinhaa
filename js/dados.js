@@ -14,6 +14,7 @@ window.PORTFOLIO = {
     whatsapp: '5551996263127',
     email: 'smoreiraparanhos@gmail.com',
     instagram: '',
+    local: 'Eldorado do Sul, RS',
     // Texto que já vem escrito quando a pessoa abre o WhatsApp ou o e-mail.
     mensagem: 'Olá, Samuel! Vi seu portfólio e quero conversar sobre um site.'
   }
