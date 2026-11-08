@@ -13,7 +13,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400..800&family=Space+Mono:wght@400;700&family=Schibsted+Grotesk:wght@400..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600..900&family=Oxanium:wght@400..800&family=Space+Mono:wght@400;700&family=Schibsted+Grotesk:wght@400..700&display=swap">
   <link rel="stylesheet" href="css/estilo.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="js/dados.js" defer></script>
@@ -55,6 +55,10 @@
       <p class="chegada__frase">Desenvolvo sites para negócios locais, com identidade própria e pensados para o celular, do rascunho à publicação.</p>
 
       <ul class="contatos-rapidos" id="contatos-rapidos" aria-label="Contatos"></ul>
+      <div class="chegada__acoes">
+        <a class="botao botao--roxo botao--seta" href="#trabalhos">Explorar projetos</a>
+        <a class="botao botao--contorno" href="#contato">Entre em contato</a>
+      </div>
     </div>
 
     <!-- Porta-chaves: a navegação do portfólio -->
@@ -141,6 +145,7 @@
             <li>Barra “Agendar horário” fixa no celular</li>
             <li>Placa aberto/fechado no horário de Brasília</li>
           </ul>
+          <p class="resultado"><span class="mono">Resultado principal:</span> pedido de horário em quatro passos, ligado à agenda real da barbearia.</p>
           <ul class="tecnologias" aria-label="Tecnologias"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li></ul>
           <a class="botao botao--roxo" href="https://smoreiraparanhos-web.github.io/rodriguesthebarber/" target="_blank" rel="noopener">Ver site ao vivo<span class="sr"> Rodrigues TheBarber (abre em nova aba)</span></a>
         </div>
@@ -186,6 +191,7 @@
             <li>Famílias olfativas apresentadas por imagens</li>
             <li>Pirâmide olfativa interativa e lista de favoritos</li>
           </ul>
+          <p class="resultado"><span class="mono">Resultado principal:</span> escolha de perfume guiada por sensações, sem exigir vocabulário técnico.</p>
           <ul class="tecnologias" aria-label="Tecnologias"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
           <a class="botao botao--roxo" href="https://smoreiraparanhos-web.github.io/mare-de-essencias/" target="_blank" rel="noopener">Ver site ao vivo<span class="sr"> Maré de Essências (abre em nova aba)</span></a>
         </div>
@@ -252,6 +258,23 @@
       <div class="faixa__linha faixa__linha--volta"><span>Eldorado do Sul</span><span>Sites sob medida</span><span>Do rascunho ao ar</span><span>Eldorado do Sul</span><span>Sites sob medida</span><span>Do rascunho ao ar</span></div>
     </div>
 
+    <!-- ================= HABILIDADES ================= -->
+    <section class="secao" id="habilidades" aria-labelledby="habilidades-titulo">
+      <header class="secao__cabeca">
+        <span class="mono mono--icone">ferramentas e competências</span>
+        <h2 id="habilidades-titulo">Matriz de habilidades</h2>
+        <p class="mono mono--fraco">// o que aparece nos projetos acima</p>
+      </header>
+      <ul class="habilidades">
+        <li class="cartao"><h3><span class="habilidades__icone" aria-hidden="true">&lt;/&gt;</span>Front-end</h3><ul class="fichas"><li>HTML semântico</li><li>CSS responsivo</li><li>JavaScript</li><li>SVG</li></ul></li>
+        <li class="cartao"><h3><span class="habilidades__icone" aria-hidden="true">◐</span>Interface</h3><ul class="fichas"><li>Identidade visual</li><li>Tipografia</li><li>Layout para celular</li><li>Microinterações</li></ul></li>
+        <li class="cartao"><h3><span class="habilidades__icone" aria-hidden="true">⇄</span>Integração</h3><ul class="fichas fichas--vermelho"><li>Supabase</li><li>Agenda online</li><li>WhatsApp</li><li>Google Maps</li></ul></li>
+        <li class="cartao"><h3><span class="habilidades__icone" aria-hidden="true">▲</span>Publicação</h3><ul class="fichas"><li>Git</li><li>GitHub Pages</li><li>Imagens WebP</li></ul></li>
+        <li class="cartao"><h3><span class="habilidades__icone" aria-hidden="true">✓</span>Qualidade</h3><ul class="fichas fichas--vermelho"><li>Acessibilidade</li><li>Privacidade (LGPD)</li><li>Política de segurança</li></ul></li>
+        <li class="cartao"><h3><span class="habilidades__icone" aria-hidden="true">✎</span>Entrega</h3><ul class="fichas"><li>Guia de uso</li><li>Ambiente de teste</li><li>Suporte em português</li></ul></li>
+      </ul>
+    </section>
+
     <!-- ================= SOBRE ================= -->
     <section class="secao" id="sobre" aria-labelledby="sobre-titulo">
       <header class="secao__cabeca">
@@ -279,10 +302,23 @@
         <h2 id="contato-titulo">Bora criar o seu site?</h2>
         <p class="mono mono--fraco">// conte sua ideia, sem compromisso. eu mesmo respondo.</p>
       </header>
-      <div class="cartao contato__cartao">
-        <p class="mono contato__titulo">// canais diretos</p>
-        <ul class="canais" id="canais"></ul>
-        <div class="contato__acao" id="canal" hidden></div>
+      <div class="contato__grade">
+        <div class="cartao contato__cartao">
+          <p class="mono contato__titulo">// coordenadas diretas</p>
+          <p class="contato__texto">Quer um site para o seu negócio ou tem uma ideia para tirar do papel? Fale direto comigo.</p>
+          <ul class="canais" id="canais"></ul>
+        </div>
+        <form class="cartao contato__cartao formulario" id="formulario" novalidate>
+          <div class="formulario__topo"><p class="mono contato__titulo">&gt;_ mensagem direta</p><span class="status"><span class="status__ponto"></span>online</span></div>
+          <div class="formulario__linha">
+            <label><span class="mono">Seu nome *</span><input name="nome" autocomplete="name" required placeholder="Ex.: Ana, da Doceria Central"></label>
+            <label><span class="mono">Tipo de negócio</span><input name="negocio" placeholder="Ex.: barbearia, loja, clínica"></label>
+          </div>
+          <label><span class="mono">O que você precisa? *</span><textarea name="mensagem" rows="4" required placeholder="Conte um pouco sobre o site que você imagina."></textarea></label>
+          <p class="formulario__aviso" id="formulario-aviso" role="status"></p>
+          <button class="botao botao--vermelho" type="submit">Abrir no WhatsApp</button>
+          <p class="formulario__nota mono mono--fraco">// nada é enviado por aqui: a mensagem abre pronta no seu WhatsApp.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -295,11 +331,24 @@
 
   <!-- Doca: aparece depois da chegada, com as mesmas quatro chaves em miniatura -->
   <nav class="doca" id="doca" aria-label="Navegação rápida">
-    <a href="#inicio" class="doca__item" aria-label="Início"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6 8 6v8h-5v-5H9v5H4z"/></svg></a>
+    <a href="#inicio" class="doca__item" data-secao="inicio" aria-label="Início"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6 8 6v8h-5v-5H9v5H4z"/></svg></a>
     <a href="#trabalhos" class="doca__item" data-secao="trabalhos"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M12 13v9M12 17h3M12 20h2"/></svg><span>Trabalhos</span></a>
     <a href="#processo" class="doca__item" data-secao="processo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="10" rx="3"/><path d="M12 13v9M12 17h3M12 20h2"/></svg><span>Processo</span></a>
+    <a href="#habilidades" class="doca__item" data-secao="habilidades"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h13"/></svg><span>Habilidades</span></a>
     <a href="#sobre" class="doca__item" data-secao="sobre"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l5 2.9v5.7L12 14l-5-2.9V5.4z"/><path d="M12 14v8M12 18h3M12 21h2"/></svg><span>Sobre</span></a>
     <a href="#contato" class="doca__item doca__item--acento" data-secao="contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3.5 0 6 2.2 6 5.2 0 3.3-2.6 5.6-6 6.8-3.4-1.2-6-3.5-6-6.8C6 5.2 8.5 3 12 3z"/><path d="M12 15v7M12 18h3M12 21h2"/></svg><span>Contato</span></a>
+    <a href="#contato" class="doca__cta">Entre em contato</a>
   </nav>
+
+  <!-- Índice lateral e progresso de leitura (decorativos) -->
+  <div class="indice" aria-hidden="true">
+    <span data-indice="inicio">Desenvolvedor</span>
+    <span data-indice="trabalhos">Trabalhos</span>
+    <span data-indice="processo">Processo</span>
+    <span data-indice="habilidades">Habilidades</span>
+    <span data-indice="sobre">Sobre</span>
+    <span data-indice="contato">Contato</span>
+  </div>
+  <div class="progresso" aria-hidden="true"><span class="progresso__barra" id="progresso-barra"></span><span class="progresso__valor mono" id="progresso-valor">000%</span></div>
 </body>
 </html>

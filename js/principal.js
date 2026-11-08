@@ -24,30 +24,48 @@
   }
   if (hora) { atualizarHora(); setInterval(atualizarHora, 30000); }
 
-  /* ---------- doca: aparece depois da chegada e marca a seção atual ---------- */
+  /* ---------- doca: no topo durante a chegada, embaixo depois ---------- */
   var doca = $('#doca');
   var chegada = $('#inicio');
   if (doca && chegada && 'IntersectionObserver' in window) {
-    doca.inert = true;
     new IntersectionObserver(function (e) {
-      var mostrar = !e[0].isIntersecting;
-      doca.classList.toggle('visivel', mostrar);
-      doca.inert = !mostrar;
+      doca.classList.toggle('embaixo', !e[0].isIntersecting);
     }, { rootMargin: '-55% 0px 0px 0px' }).observe(chegada);
   }
 
+  /* ---------- seção atual: chave, doca e índice lateral ---------- */
   var chaves = $$('.chave');
   var itensDoca = $$('.doca__item[data-secao]');
+  var indice = $$('[data-indice]');
   function marcar(id) {
     chaves.forEach(function (c) { if (c.dataset.secao === id) c.setAttribute('data-escolhida', ''); else c.removeAttribute('data-escolhida'); });
     itensDoca.forEach(function (a) { if (a.dataset.secao === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    indice.forEach(function (i) { i.classList.toggle('atual', i.dataset.indice === id); });
   }
   chaves.forEach(function (c) { c.addEventListener('click', function () { marcar(c.dataset.secao); }); });
+  marcar('inicio');
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function (entradas) {
       entradas.forEach(function (e) { if (e.isIntersecting) marcar(e.target.id); });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['trabalhos', 'processo', 'sobre', 'contato'].forEach(function (id) { var el = document.getElementById(id); if (el) obs.observe(el); });
+    ['inicio', 'trabalhos', 'processo', 'habilidades', 'sobre', 'contato'].forEach(function (id) { var el = document.getElementById(id); if (el) obs.observe(el); });
+  }
+
+  /* ---------- progresso de leitura ---------- */
+  var barra = $('#progresso-barra');
+  var valor = $('#progresso-valor');
+  var agendado = false;
+  function progresso() {
+    agendado = false;
+    var max = document.documentElement.scrollHeight - innerHeight;
+    var p = max > 0 ? Math.min(100, Math.max(0, scrollY / max * 100)) : 0;
+    barra.style.height = p + '%';
+    valor.parentNode.style.setProperty('--p', p + '%');
+    valor.textContent = String(Math.round(p)).padStart(3, '0') + '%';
+  }
+  if (barra && valor) {
+    addEventListener('scroll', function () { if (!agendado) { agendado = true; requestAnimationFrame(progresso); } }, { passive: true });
+    progresso();
   }
 
   /* ---------- pedido de horário: um passo por vez ---------- */
@@ -158,6 +176,30 @@
     if (email) linha('email', 'E-mail', email, 'mailto:' + email, email);
     if (numero) linha('whatsapp', 'WhatsApp', telefone, linkWpp, telefone);
     if (local) linha('local', 'Local', local, '', '');
+  }
+
+  var formulario = $('#formulario');
+  if (formulario) {
+    var aviso = $('#formulario-aviso');
+    if (!linkWpp && email) $('button[type="submit"]', formulario).textContent = 'Abrir no e-mail';
+    formulario.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nome = formulario.nome.value.trim();
+      var negocio = formulario.negocio.value.trim();
+      var texto = formulario.mensagem.value.trim();
+      formulario.nome.setAttribute('aria-invalid', String(!nome));
+      formulario.mensagem.setAttribute('aria-invalid', String(!texto));
+      if (!nome || !texto) {
+        aviso.textContent = 'Preencha seu nome e o que você precisa.';
+        (!nome ? formulario.nome : formulario.mensagem).focus();
+        return;
+      }
+      aviso.textContent = '';
+      var corpo = 'Olá, Samuel! Sou ' + nome + (negocio ? ' (' + negocio + ')' : '') + '.\n\n' + texto;
+      var destino = numero ? 'https://wa.me/' + numero + '?text=' + encodeURIComponent(corpo)
+        : email ? 'mailto:' + email + '?subject=' + encodeURIComponent('Site para ' + (negocio || nome)) + '&body=' + encodeURIComponent(corpo) : '';
+      if (destino) window.open(destino, '_blank', 'noopener');
+    });
   }
 
   var canal = $('#canal');
