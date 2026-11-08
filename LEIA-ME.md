@@ -5,10 +5,10 @@ Site estático em HTML, CSS e JavaScript, sem dependências, pronto para o GitHu
 ## Estrutura
 
 ```
-index.html                    conteúdo: textos, projetos e capturas (cada projeto é um <article>)
+index.html                    conteúdo: chegada, vitrines dos projetos (cada uma é um <article class="vitrine">), processo, sobre e contato
 css/estilo.css                apresentação: cores, escala, grade e componentes (tokens no topo, em :root)
 js/dados.js                   ← EDITE AQUI: canal de contato
-js/principal.js               comportamento: barra guia, chave escolhida, passo a passo, seletor da Maré, contato
+js/principal.js               comportamento: palco da chegada, chave escolhida, passo a passo, seletor da Maré, botão de voltar, contato
 assets/projetos/<projeto>/    capturas reais (WebP) geradas pelo script
 assets/img/favicon.svg        ícone da aba
 ferramentas/capturar-telas.mjs  gera as capturas a partir de cópias locais dos projetos
@@ -25,8 +25,8 @@ Depois abra `http://localhost:8000`.
 ## Editar
 
 - **Contato:** em `js/dados.js`, preencha um canal (`whatsapp`, `email` ou `instagram`). A seção “Conversa” mostra um único botão com o primeiro canal preenchido. Com todos vazios, nenhum botão aparece.
-- **Textos de um projeto:** no `index.html`, dentro do `<article>` do projeto. Cada momento (`<section class="momento">`) junta um texto curto e a captura que o sustenta.
-- **Novo projeto (ex.: Camisa em Campo):** copie um `<article class="projeto">`, troque textos e imagens e ajuste a cor de identidade em `style="--projeto: #..."`. Só publique quando houver capturas reais suficientes.
+- **Projeto:** no `index.html`, cada `<article class="vitrine">` tem nome, tipo, até quatro detalhes curtos, o link e um mosaico de 5 peças (`<figure class="peca">`). `peca--alta` ocupa duas linhas, `peca--larga` duas colunas; `--pos` escolhe o recorte da imagem.
+- **Novo projeto (ex.: Camisa em Campo):** copie uma vitrine, troque textos e capturas e ajuste a cor de identidade em `style="--projeto: #..."`. Para aparecer na chegada, acrescente uma `<figure class="palco__cena">` com uma captura de computador e uma de celular.
 - **Cores, tipografia e espaçamentos:** no topo de `css/estilo.css`.
 
 ## Capturas
@@ -46,10 +46,11 @@ A conversão para WebP usa Python com Pillow (`pip install pillow`). Confira as 
 ## Sistema visual (resumo)
 
 - **Cor:** o preto domina, em quatro profundidades (parede, fundo, superfície, linha). O roxo dá atmosfera e luz. O vermelho é o acento: foco do teclado, chave escolhida e botão de contato. Os projetos mantêm as cores próprias nas capturas.
-- **Tipografia:** escala em √φ (1,272), com base de 17 px. Dois passos equivalem a φ. Fraunces nos títulos, Schibsted Grotesk no texto.
-- **Espaço:** intervalos de 8·φⁿ arredondados (8, 13, 21, 34, 55, 89, 144, 233 px) e grade de 12 colunas. O texto ocupa 4 colunas e a evidência 8, com inversão nos detalhes.
+- **Largura total:** as seções ocupam a tela inteira; só a margem lateral (`--borda`, de 16 a 80 px) acompanha a janela. Tipografia e espaços fluidos com `clamp()`.
+- **Mosaico:** grade de 4 colunas com linhas de mesma altura (2 colunas no celular), para as peças sempre alinharem.
+- **Tipografia:** Fraunces nos títulos, Schibsted Grotesk no texto.
 - **Porta-chaves:** passo dos ganchos = largura da cabeça + 21 px. As hastes crescem em 1 · 1,13 · 1,272 · 1,414.
-- **Movimento:** três famílias. A resposta das chaves (sobe 3 px, gira 2° e acende), a aproximação e o assentamento das capturas guiados pela rolagem, e a troca suave de estado no passo a passo e no seletor. Tudo é desativado com “reduzir movimento”, e nenhum conteúdo depende de animação para aparecer.
+- **Movimento:** a resposta das chaves (sobe 3 px, gira 2° e acende), a troca do palco a cada 5 s (para ao passar o mouse, focar ou escolher) e a troca suave de estado no passo a passo e no seletor. Tudo é desativado com “reduzir movimento”.
 
 ## Publicar no GitHub Pages
 
