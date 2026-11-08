@@ -135,7 +135,6 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
 {
   const { ctx, pagina } = await abrir(R, DESKTOP);
   await tela(pagina, 'rodrigues/abertura-computador', { largura: 1920 });
-  await tela(pagina, 'rodrigues/tabela-computador', { elemento: '#precos .quadro, #precos', largura: 1920 });
   await tela(pagina, 'rodrigues/placa-horario', { elemento: '.porta', largura: 1000 });
   // agendamento no computador: o relógio gira até o horário escolhido
   await pagina.selectOption('#servico', { index: 3 });
@@ -185,7 +184,6 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
       const r = document.querySelector('#tide-range');
       r.value = valor; r.dispatchEvent(new Event('input', { bubbles: true }));
     }, v);
-    if (i === 3) await tela(pagina, 'mare/mare-computador-4', { elemento: '#mare', espera: 700, largura: 1920 });
   }
   await ctx.close();
 }
