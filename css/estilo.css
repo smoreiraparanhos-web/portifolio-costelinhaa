@@ -627,7 +627,8 @@ input[type="range"]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 2px var(
 }
 .canal:hover { background: var(--vermelho-escuro); }
 .canal:focus-visible { outline-color: var(--texto); }
-.canal__detalhe { display: block; margin-top: var(--e2); font-size: var(--t-1); color: var(--texto-3); }
+.canal__detalhe { display: block; margin-top: var(--e3); font-size: var(--t-1); color: var(--texto-2); }
+.canal__detalhe a { color: var(--roxo-luz); text-underline-offset: .2em; padding-block: var(--e1); }
 @media (min-width: 64em) {
   .conversa__grade { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e4); }
   .conversa__grade .rotulo { grid-column: 1 / span 4; align-self: start; padding-top: .9rem; }
@@ -640,3 +641,4 @@ input[type="range"]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 2px var(
 .rodape__interno { display: flex; justify-content: space-between; align-items: center; gap: var(--e3); flex-wrap: wrap; }
 .rodape a { color: var(--texto-2); padding-block: var(--e2); }
 .rodape a:hover { color: var(--texto); }
+.inteiro { white-space: nowrap; }

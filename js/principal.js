@@ -141,7 +141,7 @@
   var insta = String(c.instagram || '').replace(/^@/, '').trim();
 
   if (numero) {
-    link = { href: 'https://wa.me/' + numero + (msg ? '?text=' + encodeURIComponent(msg) : ''), texto: 'Conversar pelo WhatsApp', externo: true };
+    link = { href: 'https://wa.me/' + numero + (msg ? '?text=' + encodeURIComponent(msg) : ''), texto: 'Conversar pelo WhatsApp', externo: true, alternativa: email };
   } else if (email) {
     link = { href: 'mailto:' + email + (msg ? '?subject=' + encodeURIComponent('Site') + '&body=' + encodeURIComponent(msg) : ''), texto: 'Escrever um e-mail', detalhe: email };
   } else if (insta) {
@@ -167,6 +167,16 @@
       d.className = 'canal__detalhe';
       d.textContent = link.detalhe;
       canal.appendChild(d);
+    }
+    if (link.alternativa) {
+      var alt = document.createElement('span');
+      alt.className = 'canal__detalhe';
+      alt.appendChild(document.createTextNode('ou escreva para '));
+      var m = document.createElement('a');
+      m.href = 'mailto:' + link.alternativa;
+      m.textContent = link.alternativa;
+      alt.appendChild(m);
+      canal.appendChild(alt);
     }
     canal.hidden = false;
   }
