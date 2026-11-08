@@ -211,4 +211,5 @@
     canal.appendChild(principal);
     canal.hidden = false;
   }
+  document.documentElement.classList.add('pronto');
 })();
