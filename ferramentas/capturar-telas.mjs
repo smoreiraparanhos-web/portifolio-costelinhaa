@@ -155,8 +155,6 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
   // sequência no celular: preços e trabalhos com a barra fixa de agendamento
   await rolarAte(pagina, '#precos', 0);
   await tela(pagina, 'rodrigues/celular-precos', { largura: 780 });
-  await rolarAte(pagina, '#avaliacoes', 0);
-  await tela(pagina, 'rodrigues/celular-avaliacoes', { largura: 780 });
   // passo a passo do pedido de horário (agenda simulada)
   await pagina.setViewportSize({ width: 390, height: 1300 });
   await rolarAte(pagina, '#ficha', -20);
@@ -180,24 +178,22 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
 /* ---------------- Maré de Essências ---------------- */
 {
   const { ctx, pagina } = await abrir(M, DESKTOP);
+  await tela(pagina, 'mare/abertura-computador', { largura: 1920 });
   await tela(pagina, 'mare/familias', { elemento: '.families', largura: 1920 });
-  await tela(pagina, 'mare/guia', { elemento: '#guia', largura: 1920 });
   for (const [i, v] of [0, 33, 67, 100].entries()) {
     await pagina.evaluate((valor) => {
       const r = document.querySelector('#tide-range');
       r.value = valor; r.dispatchEvent(new Event('input', { bubbles: true }));
     }, v);
-    await tela(pagina, `mare/mare-computador-${i + 1}`, { elemento: '#mare', espera: 700, largura: 1920 });
+    if (i === 3) await tela(pagina, 'mare/mare-computador-4', { elemento: '#mare', espera: 700, largura: 1920 });
   }
   await ctx.close();
 }
 {
   const { ctx, pagina } = await abrir(M, CELULAR);
-  await rolarAte(pagina, '.families', -40);
-  await tela(pagina, 'mare/familias-celular', { largura: 780 });
+  await tela(pagina, 'mare/abertura-celular', { largura: 780 });
   await rolarAte(pagina, '#guia', -10);
   await tela(pagina, 'mare/guia-celular', { largura: 780 });
-  await tela(pagina, 'mare/aviso', { elemento: '.footer-bottom p', largura: 780 });
   for (const [i, v] of [0, 33, 67, 100].entries()) {
     await pagina.evaluate((valor) => {
       const r = document.querySelector('#tide-range');

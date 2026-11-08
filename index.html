@@ -2,18 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Samuel Moreira Paranhos · Desenvolvimento de sites</title>
-  <meta name="description" content="Portfólio de Samuel Moreira Paranhos, de Eldorado do Sul (RS). Desenvolvo sites: organizo o conteúdo, desenho a interface e escrevo o código. Veja dois projetos explicados por dentro.">
-  <meta name="theme-color" content="#0b0a0e">
+  <meta name="description" content="Samuel Moreira Paranhos, de Eldorado do Sul (RS). Desenvolvo sites para negócios locais: identidade, interface e código, do rascunho à publicação.">
+  <meta name="theme-color" content="#09080c">
   <meta property="og:title" content="Samuel Moreira Paranhos · Desenvolvimento de sites">
-  <meta property="og:description" content="Dois sites mostrados por dentro: o que o visitante precisa fazer em cada um e como a página foi organizada para isso.">
+  <meta property="og:description" content="Sites com identidade própria, do rascunho à publicação.">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Schibsted+Grotesk:wght@400..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Schibsted+Grotesk:wght@400..700&display=swap">
   <link rel="stylesheet" href="css/estilo.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="js/dados.js" defer></script>
@@ -22,398 +22,248 @@
 <body>
   <a class="pular" href="#trabalhos">Pular para os trabalhos</a>
 
-  <!-- Gradientes do metal das chaves, compartilhados pelos SVGs da página -->
   <svg class="oculto" width="0" height="0" aria-hidden="true" focusable="false">
     <defs>
       <linearGradient id="metal" x1="0" x2="1" y1="0" y2="0">
-        <stop offset="0" stop-color="#2b2632"/>
-        <stop offset=".45" stop-color="#5d5468"/>
-        <stop offset=".62" stop-color="#7a7086"/>
-        <stop offset="1" stop-color="#2a2531"/>
+        <stop offset="0" stop-color="#2e2836"/>
+        <stop offset=".45" stop-color="#655a73"/>
+        <stop offset=".6" stop-color="#8a7d99"/>
+        <stop offset="1" stop-color="#2b2532"/>
       </linearGradient>
       <linearGradient id="metal-claro" x1="0" x2="1" y1="0" y2="0">
-        <stop offset="0" stop-color="#3a3243"/>
-        <stop offset=".5" stop-color="#8f80a8"/>
-        <stop offset="1" stop-color="#3a3243"/>
+        <stop offset="0" stop-color="#3d3447"/>
+        <stop offset=".5" stop-color="#a493bd"/>
+        <stop offset="1" stop-color="#3d3447"/>
       </linearGradient>
     </defs>
   </svg>
 
-  <!-- Barra discreta que aparece depois da chegada: volta ao início e mostra onde você está -->
-  <header class="guia" id="guia" aria-label="Navegação">
-    <div class="guia__interno envelope">
-      <a class="guia__nome" href="#inicio">Samuel Moreira Paranhos</a>
-      <nav class="guia__nav" aria-label="Seções">
-        <a href="#trabalhos" data-secao="trabalhos">Trabalhos</a>
-        <a href="#processo" data-secao="processo">Processo</a>
-        <a href="#sobre" data-secao="sobre">Sobre mim</a>
-        <a href="#conversa" data-secao="conversa">Conversa</a>
-      </nav>
-      <a class="guia__voltar" href="#inicio">Início</a>
-    </div>
-  </header>
-
   <!-- ================= CHEGADA ================= -->
   <header class="chegada" id="inicio">
-    <div class="chegada__grade envelope">
+    <div class="chegada__meta">
+      <span>Desenvolvedor de sites</span>
+      <span>Eldorado do Sul, RS</span>
+    </div>
+
+    <div class="chegada__corpo">
       <div class="chegada__texto">
-        <h1 class="chegada__nome">Samuel<br>Moreira Paranhos</h1>
-        <p class="chegada__frase">Desenvolvo sites para negócios: organizo o conteúdo, desenho a interface e escrevo o código, do primeiro rascunho à publicação.</p>
+        <h1 class="chegada__nome">Samuel <em>Moreira</em> Paranhos</h1>
+        <p class="chegada__frase">Desenvolvo sites para negócios locais: identidade, interface e código, do rascunho à publicação.</p>
+
+        <nav class="porta-chaves" aria-label="Seções do portfólio">
+          <div class="trilho" aria-hidden="true"></div>
+          <ul class="chaves">
+            <li>
+              <a class="chave" href="#trabalhos" data-secao="trabalhos" style="--haste: 1">
+                <svg class="chave__argola" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/></svg>
+                <span class="chave__cabeca"><span class="chave__nome">Trabalhos</span></span>
+                <svg class="chave__haste" viewBox="0 0 24 120" aria-hidden="true">
+                  <path d="M3 0h18v7l-4 4v104l-2 5H9l-2-5V11L3 7z" fill="url(#metal)"/>
+                  <path d="M17 40h5v8h-3v6h4v10h-6zM17 76h4v7h-4zM17 92h6v9h-3v6h-3z" fill="url(#metal)"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="chave" href="#processo" data-secao="processo" style="--haste: 1.272">
+                <svg class="chave__argola" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/></svg>
+                <span class="chave__cabeca"><span class="chave__nome">Processo</span></span>
+                <svg class="chave__haste" viewBox="0 0 24 120" aria-hidden="true">
+                  <path d="M3 0h18v7l-4 4v104l-2 5H9l-2-5V11L3 7z" fill="url(#metal)"/>
+                  <path d="M17 30h4v12h-4zM17 52h6v6h-2v8h-4zM17 84h5v14h-5z" fill="url(#metal)"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="chave" href="#sobre" data-secao="sobre" style="--haste: 1.13">
+                <svg class="chave__argola" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/></svg>
+                <span class="chave__cabeca"><span class="chave__nome">Sobre mim</span></span>
+                <svg class="chave__haste" viewBox="0 0 24 120" aria-hidden="true">
+                  <path d="M3 0h18v7l-4 4v104l-2 5H9l-2-5V11L3 7z" fill="url(#metal)"/>
+                  <path d="M17 44h6v5h-2v9h-4zM17 70h4v6h2v8h-6zM17 100h4v8h-4z" fill="url(#metal)"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="chave chave--acento" href="#contato" data-secao="contato" style="--haste: 1.414">
+                <svg class="chave__argola" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/></svg>
+                <span class="chave__cabeca"><span class="chave__nome">Contato</span></span>
+                <svg class="chave__haste" viewBox="0 0 24 120" aria-hidden="true">
+                  <path d="M3 0h18v7l-4 4v104l-2 5H9l-2-5V11L3 7z" fill="url(#metal)"/>
+                  <path d="M17 34h5v6h-5zM17 56h6v12h-3v5h-3zM17 90h4v5h2v9h-6z" fill="url(#metal)"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-      <nav class="porta-chaves" aria-label="Seções do portfólio">
-        <div class="trilho" aria-hidden="true"></div>
-        <ul class="chaves">
-          <li>
-            <a class="chave" href="#trabalhos" data-secao="trabalhos" style="--haste: 1">
-              <svg class="chave__argola" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/></svg>
-              <span class="chave__cabeca"><span class="chave__nome">Trabalhos</span></span>
-              <svg class="chave__haste" viewBox="0 0 24 120" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
-                <path d="M3 0h18v7l-4 4v104l-2 5H9l-2-5V11L3 7z" fill="url(#metal)"/><path d="M12 14v98" stroke="#1a1620" stroke-width="1.2" opacity=".55"/>
-                <path d="M17 40h5v8h-3v6h4v10h-6zM17 76h4v7h-4zM17 92h6v9h-3v6h-3z" fill="url(#metal)"/>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a class="chave" href="#processo" data-secao="processo" style="--haste: 1.272">
-              <svg class="chave__argola" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/></svg>
-              <span class="chave__cabeca"><span class="chave__nome">Processo</span></span>
-              <svg class="chave__haste" viewBox="0 0 24 120" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
-                <path d="M3 0h18v7l-4 4v104l-2 5H9l-2-5V11L3 7z" fill="url(#metal)"/><path d="M12 14v98" stroke="#1a1620" stroke-width="1.2" opacity=".55"/>
-                <path d="M17 30h4v12h-4zM17 52h6v6h-2v8h-4zM17 84h5v14h-5z" fill="url(#metal)"/>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a class="chave" href="#sobre" data-secao="sobre" style="--haste: 1.13">
-              <svg class="chave__argola" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/></svg>
-              <span class="chave__cabeca"><span class="chave__nome">Sobre mim</span></span>
-              <svg class="chave__haste" viewBox="0 0 24 120" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
-                <path d="M3 0h18v7l-4 4v104l-2 5H9l-2-5V11L3 7z" fill="url(#metal)"/><path d="M12 14v98" stroke="#1a1620" stroke-width="1.2" opacity=".55"/>
-                <path d="M17 44h6v5h-2v9h-4zM17 70h4v6h2v8h-6zM17 100h4v8h-4z" fill="url(#metal)"/>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a class="chave" href="#conversa" data-secao="conversa" style="--haste: 1.414">
-              <svg class="chave__argola" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/></svg>
-              <span class="chave__cabeca"><span class="chave__nome">Conversa</span></span>
-              <svg class="chave__haste" viewBox="0 0 24 120" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
-                <path d="M3 0h18v7l-4 4v104l-2 5H9l-2-5V11L3 7z" fill="url(#metal)"/><path d="M12 14v98" stroke="#1a1620" stroke-width="1.2" opacity=".55"/>
-                <path d="M17 34h5v6h-5zM17 56h6v12h-3v5h-3zM17 90h4v5h2v9h-6z" fill="url(#metal)"/>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <!-- Palco: os sites alternam, computador ao fundo e celular à frente -->
+      <div class="palco" data-palco role="group" aria-label="Trabalhos em exibição">
+        <figure class="palco__cena atual" data-legenda="Rodrigues TheBarber · barbearia">
+          <img class="palco__largo" src="assets/projetos/rodrigues/abertura-computador.webp" width="1920" height="1200" alt="Site Rodrigues TheBarber no computador." fetchpriority="high">
+          <img class="palco__celular" src="assets/projetos/rodrigues/abertura-celular.webp" width="780" height="1688" alt="Site Rodrigues TheBarber no celular.">
+        </figure>
+        <figure class="palco__cena" data-legenda="Maré de Essências · perfumaria">
+          <img class="palco__largo" src="assets/projetos/mare/abertura-computador.webp" width="1920" height="1200" alt="Site Maré de Essências no computador.">
+          <img class="palco__celular" src="assets/projetos/mare/abertura-celular.webp" width="780" height="1688" alt="Site Maré de Essências no celular.">
+        </figure>
+        <p class="palco__legenda"><span class="ponto" aria-hidden="true"></span><span data-palco-legenda>Rodrigues TheBarber · barbearia</span></p>
+      </div>
     </div>
   </header>
 
   <main>
     <!-- ================= TRABALHOS ================= -->
     <section class="trabalhos" id="trabalhos" aria-labelledby="trabalhos-titulo">
-      <div class="envelope abertura-trabalhos">
+      <div class="faixa-titulo">
         <h2 class="rotulo" id="trabalhos-titulo">Trabalhos</h2>
-        <p class="declaracao">Dois sites mostrados por dentro: o que o visitante precisa fazer em cada um e como a página foi organizada para isso.</p>
+        <p class="faixa-titulo__frase">Dois sites, vistos de perto.</p>
       </div>
 
-      <!-- Aproximação: a moldura cresce até ocupar o quadro -->
-      <div class="aproximacao">
-        <figure class="aproximacao__quadro">
-          <img src="assets/projetos/rodrigues/abertura-computador.webp" width="1920" height="1200"
-               alt="Primeira tela do site Rodrigues TheBarber no computador: nome da barbearia em letras douradas, a frase “Aqui o casual vira chique”, botões Agendar horário e Ver preços, e o retrato do barbeiro Tiago em uma moldura em arco."
-               fetchpriority="high">
-        </figure>
-      </div>
+      <!-- ---------- Rodrigues TheBarber ---------- -->
+      <article class="vitrine" id="rodrigues" aria-labelledby="rodrigues-titulo" style="--projeto: #c9a24a">
+        <div class="vitrine__topo">
+          <div class="vitrine__titulo">
+            <p class="vitrine__tipo">Barbearia · Eldorado do Sul · no ar</p>
+            <h3 id="rodrigues-titulo">Rodrigues TheBarber</h3>
+          </div>
+          <ul class="detalhes" aria-label="Detalhes do projeto">
+            <li>Agenda conectada</li>
+            <li>Relógio no horário escolhido</li>
+            <li>Barra de agendar no celular</li>
+            <li>Placa aberto/fechado</li>
+          </ul>
+          <a class="visitar" href="https://smoreiraparanhos-web.github.io/rodriguesthebarber/" target="_blank" rel="noopener">Visitar site<span class="sr"> Rodrigues TheBarber (abre em nova aba)</span></a>
+        </div>
 
-      <!-- ---------- PROJETO: Rodrigues TheBarber ---------- -->
-      <article class="projeto" id="rodrigues" aria-labelledby="rodrigues-titulo" style="--projeto: #c9a24a">
-        <header class="projeto__cabeca envelope">
-          <div class="projeto__titulo">
-          <p class="projeto__tipo">Barbearia em Eldorado do Sul (RS) · site publicado</p>
-          <h3 class="projeto__nome" id="rodrigues-titulo">Rodrigues TheBarber</h3>
-          </div>
-          <div class="projeto__contexto">
-            <p>O Tiago atende um cliente por vez, sempre com hora marcada. Quem chega ao site quer resolver três coisas: saber quanto custa, ver se o corte é bom e conseguir um horário. A página foi organizada em torno dessa última ação.</p>
-            <a class="externo" href="https://smoreiraparanhos-web.github.io/rodriguesthebarber/" target="_blank" rel="noopener">Abrir o site da barbearia<span class="sr"> (abre em nova aba)</span></a>
-          </div>
-        </header>
-
-        <!-- Decisão: hierarquia da primeira tela -->
-        <section class="momento momento--anotado envelope" aria-labelledby="rod-hierarquia">
-          <div class="momento__texto">
-            <h4 id="rod-hierarquia">A primeira tela responde quem atende, onde fica e como marcar</h4>
-            <ol class="notas">
-              <li>O botão de agendar fica no cabeçalho, que acompanha a rolagem.</li>
-              <li>O retrato apresenta quem vai atender. Numa barbearia de um profissional só, a pessoa escolhe o barbeiro junto com o lugar.</li>
-              <li>Logo abaixo, uma faixa reúne a nota no Google, se a barbearia está aberta agora e o endereço.</li>
-            </ol>
-          </div>
-          <figure class="captura captura--ampla">
-            <div class="captura__marcada">
-              <img src="assets/projetos/rodrigues/abertura-computador.webp" width="1920" height="1200" loading="lazy"
-                   alt="Primeira tela da Rodrigues TheBarber com três pontos marcados: o botão Agendar horário no cabeçalho, o retrato do barbeiro e a faixa com nota, situação de funcionamento e endereço.">
-              <span class="marca" style="--x: 89.8%; --y: 11.5%" aria-hidden="true">1</span>
-              <span class="marca" style="--x: 70.5%; --y: 40%" aria-hidden="true">2</span>
-              <span class="marca" style="--x: 50%; --y: 88.5%" aria-hidden="true">3</span>
+        <div class="mosaico">
+          <figure class="peca peca--alta">
+            <div class="sequencia" data-sequencia aria-label="Pedido de horário no celular, em quatro passos">
+              <ol class="sequencia__passos">
+                <li class="passo" data-titulo="Serviço e dia"><img src="assets/projetos/rodrigues/pedido-1.webp" width="764" height="662" loading="lazy" alt="Ficha de agendamento com serviço escolhido e a semana para escolher o dia."></li>
+                <li class="passo" data-titulo="Horários por período"><img src="assets/projetos/rodrigues/pedido-2.webp" width="764" height="662" loading="lazy" alt="Horários livres separados em manhã, tarde e noite."></li>
+                <li class="passo" data-titulo="Resumo antes de enviar"><img src="assets/projetos/rodrigues/pedido-3.webp" width="764" height="1352" loading="lazy" alt="Horário 13:15 marcado e a frase de resumo acima do botão Solicitar horário."></li>
+                <li class="passo" data-titulo="Erro no lugar certo"><img src="assets/projetos/rodrigues/pedido-4.webp" width="764" height="810" loading="lazy" alt="WhatsApp incompleto com a mensagem do formato esperado logo abaixo do campo."></li>
+              </ol>
             </div>
-            <figcaption>Abertura no computador, 1280 px de largura.</figcaption>
+            <figcaption>Pedido de horário · <span data-sequencia-nome>Serviço e dia</span></figcaption>
           </figure>
-        </section>
-
-        <!-- Comparação: o celular reorganiza -->
-        <section class="momento momento--celular envelope" aria-labelledby="rod-celular">
-          <div class="momento__texto">
-            <h4 id="rod-celular">No celular, a ordem muda</h4>
-            <p>No telefone, o nome, a frase e os dois botões vêm antes do retrato: a ação aparece sem rolar. Quando a abertura sai da tela, uma barra com “Agendar horário” se fixa no rodapé. Ela some de novo quando o formulário está à vista, para não repetir o que a pessoa já está vendo.</p>
-          </div>
-          <div class="sequencia-movel" role="group" aria-label="Três telas do site no celular" tabindex="0">
-            <figure class="captura captura--celular">
-              <img src="assets/projetos/rodrigues/abertura-celular.webp" width="780" height="1688" loading="lazy"
-                   alt="Abertura no celular: nome, frase, botões Agendar horário e Ver preços, e o retrato logo abaixo.">
-              <figcaption>Abertura</figcaption>
-            </figure>
-            <figure class="captura captura--celular">
-              <img src="assets/projetos/rodrigues/celular-precos.webp" width="780" height="1688" loading="lazy"
-                   alt="Tabela de preços no celular, com a barra dourada Agendar horário fixa na parte de baixo da tela.">
-              <figcaption>Preços, com a barra fixa</figcaption>
-            </figure>
-            <figure class="captura captura--celular">
-              <img src="assets/projetos/rodrigues/celular-avaliacoes.webp" width="780" height="1688" loading="lazy"
-                   alt="Avaliações no celular: nota 5,0 em 73 avaliações no Google, um depoimento em destaque e a barra Agendar horário no rodapé.">
-              <figcaption>Avaliações, com a barra fixa</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <!-- Detalhe: tabela de preços -->
-        <section class="momento momento--detalhe envelope" aria-labelledby="rod-precos">
-          <figure class="captura captura--recorte">
-            <picture>
-              <source media="(max-width: 39.99em)" srcset="assets/projetos/rodrigues/celular-precos.webp" width="780" height="1688">
-              <img src="assets/projetos/rodrigues/tabela-computador.webp" width="1920" height="2138" loading="lazy"
-                 alt="Tabela da casa: cortes, barba e alinhamento, pigmentação, luzes e cor, cada serviço com preço alinhado à direita, e o combo Ritual Rodrigues por R$ 100 em destaque dourado.">
-            </picture>
-            <figcaption>Tabela de preços.</figcaption>
+          <figure class="peca peca--larga">
+            <img class="enquadra" style="--pos: 6% 74%" src="assets/projetos/rodrigues/agenda-relogio.webp" width="1920" height="1790" loading="lazy" alt="Relógio de parede com os ponteiros no horário escolhido na ficha ao lado.">
+            <figcaption>O relógio acompanha a escolha</figcaption>
           </figure>
-          <div class="momento__texto">
-            <h4 id="rod-precos">Preço sem letra miúda</h4>
-            <p>Os serviços estão em quatro grupos (cortes, barba, pigmentação, luzes e cor), além de um combo. Antes da tabela vêm duas respostas que costumavam virar pergunta no WhatsApp: o visagismo está incluso e o pagamento é no local, em dinheiro, Pix ou cartão.</p>
-            <p>Os valores vêm do painel da barbearia: quando o Tiago muda um preço, o site mostra o novo valor.</p>
-          </div>
-        </section>
-
-        <!-- Comportamento: pedido de horário -->
-        <section class="momento momento--comportamento envelope" id="rodrigues-pedido" aria-labelledby="rod-pedido">
-          <div class="momento__texto">
-            <h4 id="rod-pedido">Pedir um horário, passo a passo</h4>
-            <p>Sequência real do formulário, capturada com a agenda de teste do próprio projeto. Nenhum pedido foi enviado à barbearia.</p>
-          </div>
-
-          <div class="sequencia" data-sequencia aria-roledescription="sequência" aria-label="Pedido de horário no celular">
-            <ol class="sequencia__passos">
-              <li class="passo">
-                <figure>
-                  <img src="assets/projetos/rodrigues/pedido-1.webp" width="764" height="662" loading="lazy"
-                       alt="Ficha de agendamento com o serviço Mid fade escolhido e a semana de novembro, de hoje até sábado, ainda sem dia marcado.">
-                  <figcaption><strong>Serviço e dia.</strong> A agenda mostra uma semana por vez, a partir de hoje, e só consulta horários quando serviço e dia estão escolhidos.</figcaption>
-                </figure>
-              </li>
-              <li class="passo">
-                <figure>
-                  <img src="assets/projetos/rodrigues/pedido-2.webp" width="764" height="662" loading="lazy"
-                       alt="Dia marcado e horários livres separados em Manhã, Tarde e Noite, com a quantidade de horários de cada período.">
-                  <figcaption><strong>Horários por período.</strong> Os horários livres aparecem em manhã, tarde e noite, com a quantidade de cada um, para a lista não virar um paredão de botões. Dias e horários também respondem às setas do teclado.</figcaption>
-                </figure>
-              </li>
-              <li class="passo">
-                <figure>
-                  <img src="assets/projetos/rodrigues/pedido-3.webp" width="764" height="1352" loading="lazy"
-                       alt="Horário 13:15 marcado e, acima do botão Solicitar horário, a frase de resumo: Mid fade, quarta-feira, 11 de novembro, às 13:15.">
-                  <figcaption><strong>Resumo antes de enviar.</strong> Escolhido o horário, uma frase confirma serviço, dia e hora. Só então o botão de solicitar fica ativo.</figcaption>
-                </figure>
-              </li>
-              <li class="passo">
-                <figure>
-                  <img src="assets/projetos/rodrigues/pedido-4.webp" width="764" height="810" loading="lazy"
-                       alt="Campo de WhatsApp incompleto com a mensagem: Informe o WhatsApp com DDD, por exemplo (51) 99999-9999. O nome e o resumo continuam preenchidos.">
-                  <figcaption><strong>Erro explicado no lugar.</strong> Com um WhatsApp incompleto, nada do que foi preenchido se perde, e a mensagem mostra o formato esperado logo abaixo do campo.</figcaption>
-                </figure>
-              </li>
-            </ol>
-          </div>
-
-          <div class="apartes">
-            <figure class="captura captura--aparte">
-              <img src="assets/projetos/rodrigues/agenda-relogio.webp" width="1920" height="1790" loading="lazy"
-                   alt="Seção Agendar horário no computador: à esquerda, um relógio de parede com os ponteiros em 13h15; à direita, a ficha com o mesmo horário marcado.">
-              <figcaption>No computador, o relógio de parede ao lado da ficha gira até o horário escolhido. É um elemento da identidade da barbearia que também confirma a escolha.</figcaption>
-            </figure>
-            <figure class="captura captura--aparte captura--placa">
-              <img src="assets/projetos/rodrigues/placa-horario.webp" width="801" height="236" loading="lazy"
-                   alt="Placa de porta pendurada com a palavra Fechado e, ao lado, a régua do dia indicando a próxima abertura.">
-              <figcaption>A placa da porta e a régua do dia seguem o horário de Brasília e os dias de folga cadastrados no painel.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <footer class="projeto__conclusao envelope">
-          <p>Este projeto mostra uma página organizada em torno de uma ação principal, uma identidade que vai da abertura ao formulário (a ficha repete o acabamento do cartão de horário apresentado no alto da página) e uma agenda ligada ao sistema da barbearia. Também participei do painel interno usado pelo Tiago. Ele não aparece aqui porque guarda dados de clientes.</p>
-        </footer>
+          <figure class="peca peca--contida">
+            <img class="enquadra" src="assets/projetos/rodrigues/placa-horario.webp" width="801" height="236" loading="lazy" alt="Placa Fechado com a régua do dia e a próxima abertura.">
+            <figcaption>Placa da porta em tempo real</figcaption>
+          </figure>
+          <figure class="peca">
+            <img class="enquadra" style="--pos: 50% 97%" src="assets/projetos/rodrigues/celular-precos.webp" width="780" height="1688" loading="lazy" alt="Tabela de preços no celular com a barra Agendar horário fixa no rodapé.">
+            <figcaption>Barra fixa no celular</figcaption>
+          </figure>
+          <figure class="peca peca--larga">
+            <img class="enquadra" style="--pos: 50% 32%" src="assets/projetos/rodrigues/tabela-computador.webp" width="1920" height="2138" loading="lazy" alt="Tabela de preços dividida em cortes, barba, pigmentação, luzes e cor.">
+            <figcaption>Preços por categoria</figcaption>
+          </figure>
+        </div>
       </article>
 
-      <!-- ---------- PROJETO: Maré de Essências ---------- -->
-      <article class="projeto projeto--claro" id="mare" aria-labelledby="mare-titulo" style="--projeto: #d8c7a6">
-        <header class="projeto__cabeca envelope">
-          <div class="projeto__titulo">
-          <p class="projeto__tipo">Perfumaria · protótipo em apresentação, ainda sem vendas</p>
-          <h3 class="projeto__nome" id="mare-titulo">Maré de Essências</h3>
+      <!-- ---------- Maré de Essências ---------- -->
+      <article class="vitrine vitrine--inversa" id="mare" aria-labelledby="mare-titulo" style="--projeto: #d8c7a6">
+        <div class="vitrine__topo">
+          <div class="vitrine__titulo">
+            <p class="vitrine__tipo">Perfumaria · protótipo, sem vendas</p>
+            <h3 id="mare-titulo">Maré de Essências</h3>
           </div>
-          <div class="projeto__contexto">
-            <p>Uma perfumaria com curadoria de importados, árabes e nacionais. Quem visita muitas vezes não sabe o nome do que procura, só do que gosta. O site precisava oferecer um ponto de partida sem exigir vocabulário técnico.</p>
-            <a class="externo" href="https://smoreiraparanhos-web.github.io/mare-de-essencias/" target="_blank" rel="noopener">Abrir o protótipo<span class="sr"> (abre em nova aba)</span></a>
-          </div>
-        </header>
+          <ul class="detalhes" aria-label="Detalhes do projeto">
+            <li>Seletor de maré</li>
+            <li>Famílias por imagem</li>
+            <li>Pirâmide olfativa</li>
+            <li>Lista de favoritos</li>
+          </ul>
+          <a class="visitar" href="https://smoreiraparanhos-web.github.io/mare-de-essencias/" target="_blank" rel="noopener">Visitar site<span class="sr"> Maré de Essências (abre em nova aba)</span></a>
+        </div>
 
-        <section class="momento momento--largo envelope" aria-labelledby="mare-familias">
-          <div class="momento__texto momento__texto--linha">
-            <h4 id="mare-familias">Começar pelo que se gosta de sentir</h4>
-            <p>Em vez de abrir pelo catálogo, a página apresenta quatro famílias olfativas, cada uma com uma imagem que sugere o cheiro: casca de limão para os frescos, copo-de-leite para os florais, mármore para os amadeirados e âmbar para os orientais. Cada cartão leva ao catálogo já filtrado.</p>
-          </div>
-          <figure class="captura captura--ampla">
-            <picture>
-              <source media="(max-width: 39.99em)" srcset="assets/projetos/mare/familias-celular.webp" width="780" height="1688">
-              <img src="assets/projetos/mare/familias.webp" width="1920" height="1367" loading="lazy"
-                 alt="Seção Famílias olfativas: título “Comece pelo que você gosta de sentir” e quatro cartões com fotos: Frescos, Florais, Amadeirados e Orientais, cada um com notas e um link.">
-            </picture>
-            <figcaption>Famílias olfativas.</figcaption>
-          </figure>
-        </section>
-
-        <section class="momento momento--comportamento envelope" aria-labelledby="mare-seletor">
-          <div class="momento__texto">
-            <h4 id="mare-seletor">Um controle que ensina</h4>
-            <p>O seletor de maré troca uma escala abstrata, do leve ao intenso, por quatro nomes, uma cor no frasco e três sugestões de perfume. Aqui estão as quatro posições capturadas do site. Lá, o controle é contínuo e o nível do líquido acompanha o movimento.</p>
-          </div>
-
-          <div class="escala" data-escala>
-            <div class="escala__controle">
-              <label for="escala-mare">Posição do seletor</label>
-              <input id="escala-mare" type="range" min="0" max="3" step="1" value="1" aria-valuetext="Jardim">
-              <div class="escala__nomes" aria-hidden="true"><span>Brisa</span><span>Jardim</span><span>Profundidade</span><span>Âmbar</span></div>
+        <div class="mosaico">
+          <figure class="peca peca--alta">
+            <div class="escala" data-escala>
+              <ol class="escala__estados">
+                <li class="estado" data-nome="Brisa"><img src="assets/projetos/mare/mare-celular-1.webp" width="750" height="1170" loading="lazy" alt="Seletor na maré Brisa, com três sugestões de perfume."></li>
+                <li class="estado" data-nome="Jardim"><img src="assets/projetos/mare/mare-celular-2.webp" width="750" height="1170" loading="lazy" alt="Seletor na maré Jardim, com três sugestões de perfume."></li>
+                <li class="estado" data-nome="Profundidade"><img src="assets/projetos/mare/mare-celular-3.webp" width="750" height="1194" loading="lazy" alt="Seletor na maré Profundidade, com três sugestões de perfume."></li>
+                <li class="estado" data-nome="Âmbar"><img src="assets/projetos/mare/mare-celular-4.webp" width="750" height="1170" loading="lazy" alt="Seletor na maré Âmbar, com três sugestões de perfume."></li>
+              </ol>
+              <div class="escala__controle">
+                <label for="escala-mare">Experimente</label>
+                <input id="escala-mare" type="range" min="0" max="3" step="1" value="1" aria-valuetext="Jardim">
+              </div>
             </div>
-            <ol class="escala__estados">
-              <li class="estado" data-nome="Brisa">
-                <img class="so-largo" src="assets/projetos/mare/mare-computador-1.webp" width="1920" height="1755" loading="lazy" alt="Seletor na posição mais leve: maré Brisa, frasco com líquido azul-claro e sugestões Light Blue, Sauvage Eau de Parfum e Acqua di Giò.">
-                <span class="so-estreito"><img src="assets/projetos/mare/frasco-celular-1.webp" width="520" height="714" loading="lazy" alt=""><img src="assets/projetos/mare/mare-celular-1.webp" width="750" height="1170" loading="lazy" alt="No celular, seletor na posição mais leve: maré Brisa, com a descrição Cítricos, notas marinhas e verdes, e três sugestões."></span>
-              </li>
-              <li class="estado" data-nome="Jardim">
-                <img class="so-largo" src="assets/projetos/mare/mare-computador-2.webp" width="1920" height="1755" loading="lazy" alt="Seletor na segunda posição: maré Jardim, frasco rosado e sugestões J'adore, Coco Mademoiselle e Libre.">
-                <span class="so-estreito"><img src="assets/projetos/mare/frasco-celular-2.webp" width="520" height="714" loading="lazy" alt=""><img src="assets/projetos/mare/mare-celular-2.webp" width="750" height="1170" loading="lazy" alt="No celular, seletor na segunda posição: maré Jardim, com a descrição Jasmim, flor de laranjeira e rosa, e três sugestões."></span>
-              </li>
-              <li class="estado" data-nome="Profundidade">
-                <img class="so-largo" src="assets/projetos/mare/mare-computador-3.webp" width="1920" height="1713" loading="lazy" alt="Seletor na terceira posição: maré Profundidade, frasco cor de madeira e sugestões Baccarat Rouge 540, Bleu de Chanel e Club de Nuit Intense Man.">
-                <span class="so-estreito"><img src="assets/projetos/mare/frasco-celular-3.webp" width="520" height="714" loading="lazy" alt=""><img src="assets/projetos/mare/mare-celular-3.webp" width="750" height="1194" loading="lazy" alt="No celular, seletor na terceira posição: maré Profundidade, com a descrição Cedro, sândalo e vetiver, e três sugestões."></span>
-              </li>
-              <li class="estado" data-nome="Âmbar">
-                <img class="so-largo" src="assets/projetos/mare/mare-computador-4.webp" width="1920" height="1713" loading="lazy" alt="Seletor na posição mais intensa: maré Âmbar, frasco âmbar e sugestões La Vie Est Belle, Good Girl e Olympéa.">
-                <span class="so-estreito"><img src="assets/projetos/mare/frasco-celular-4.webp" width="520" height="714" loading="lazy" alt=""><img src="assets/projetos/mare/mare-celular-4.webp" width="750" height="1170" loading="lazy" alt="No celular, seletor na posição mais intensa: maré Âmbar, com a descrição Âmbar, baunilha e especiarias, e três sugestões."></span>
-              </li>
-            </ol>
-          </div>
-        </section>
-
-        <section class="momento momento--detalhe envelope" aria-labelledby="mare-guia">
-          <div class="momento__texto">
-            <h4 id="mare-guia">Termos técnicos, uma frase cada</h4>
-            <p>O guia explica saída, coração e fundo conforme a pessoa toca nas camadas da pirâmide, e compara as concentrações, de Eau de Cologne a Extrait, em barras de intensidade.</p>
-            <p>O rodapé deixa claro que o site ainda não vende nem recebe pedidos ou pagamentos.</p>
-          </div>
-          <div class="pilha">
-            <figure class="captura captura--recorte-guia">
-              <picture>
-                <source media="(max-width: 39.99em)" srcset="assets/projetos/mare/guia-celular.webp" width="780" height="1688">
-                <img src="assets/projetos/mare/guia.webp" width="1920" height="1518" loading="lazy"
-                   alt="Guia “Como escolher o seu perfume”: pirâmide com as camadas Saída, Coração e Fundo, o texto da camada selecionada e barras de intensidade para Eau de Cologne, Eau de Toilette, Eau de Parfum e Parfum ou Extrait.">
-              </picture>
-              <figcaption>Guia da perfumaria.</figcaption>
-            </figure>
-            <figure class="captura captura--faixa">
-              <img src="assets/projetos/mare/aviso.webp" width="704" height="166" loading="lazy"
-                   alt="Aviso no rodapé: Site em fase de apresentação: ainda não realizamos vendas, pedidos ou pagamentos. Preços e disponibilidade serão informados no lançamento.">
-              <figcaption>Aviso no rodapé do protótipo.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <footer class="projeto__conclusao envelope">
-          <p>Este projeto mostra como transformar um assunto técnico em escolhas simples e construir uma identidade própria (grafite, dourado e areia, com tipografia editorial) diferente da barbearia, porque o público e o produto são outros. Como é um protótipo, não há vendas nem resultados para mostrar.</p>
-        </footer>
+            <figcaption>Seletor de maré · <span data-escala-nome>Jardim</span></figcaption>
+          </figure>
+          <figure class="peca peca--larga">
+            <img class="enquadra" style="--pos: 50% 84%" src="assets/projetos/mare/familias.webp" width="1920" height="1367" loading="lazy" alt="Quatro cartões de famílias olfativas com fotos: frescos, florais, amadeirados e orientais.">
+            <figcaption>Famílias olfativas</figcaption>
+          </figure>
+          <figure class="peca peca--frascos">
+            <div class="frascos" data-frascos aria-hidden="true">
+              <img src="assets/projetos/mare/frasco-celular-1.webp" width="520" height="714" loading="lazy" alt="">
+              <img src="assets/projetos/mare/frasco-celular-2.webp" width="520" height="714" loading="lazy" alt="">
+              <img src="assets/projetos/mare/frasco-celular-3.webp" width="520" height="714" loading="lazy" alt="">
+              <img src="assets/projetos/mare/frasco-celular-4.webp" width="520" height="714" loading="lazy" alt="">
+            </div>
+            <figcaption>O frasco muda de cor</figcaption>
+          </figure>
+          <figure class="peca">
+            <img class="enquadra" style="--pos: 50% 42%" src="assets/projetos/mare/guia-celular.webp" width="780" height="1688" loading="lazy" alt="Pirâmide olfativa com as camadas saída, coração e fundo no celular.">
+            <figcaption>Pirâmide olfativa</figcaption>
+          </figure>
+          <figure class="peca peca--larga">
+            <img class="enquadra" style="--pos: 50% 55%" src="assets/projetos/mare/mare-computador-4.webp" width="1920" height="1713" loading="lazy" alt="Seletor de maré no computador, na posição Âmbar, com o frasco cor de âmbar ao lado.">
+            <figcaption>Seletor no computador</figcaption>
+          </figure>
+        </div>
       </article>
     </section>
 
     <!-- ================= PROCESSO ================= -->
     <section class="processo" id="processo" aria-labelledby="processo-titulo">
-      <div class="envelope processo__grade">
-        <div class="processo__cabeca">
-          <h2 class="rotulo" id="processo-titulo">Processo</h2>
-          <p class="declaracao declaracao--menor">Parte do trabalho não aparece na primeira visita. Estas decisões estão no código dos dois projetos.</p>
-        </div>
-        <ul class="decisoes">
-          <li>
-            <h3>Testar sem atingir o negócio</h3>
-            <p>No computador de desenvolvimento, a Rodrigues usa uma agenda simulada, e pedidos de teste nunca chegam ao Tiago. Foi assim que capturei o <a href="#rodrigues-pedido">passo a passo do pedido de horário</a>.</p>
-          </li>
-          <li>
-            <h3>Dizer quem recebe os dados</h3>
-            <p>Junto ao formulário, um aviso explica quem recebe o pedido, o que é coletado, para quê, onde fica guardado e como pedir para ver ou apagar os dados. O site não usa cookies nem ferramentas de rastreamento.</p>
-          </li>
-          <li>
-            <h3>Limitar o que a página pode carregar</h3>
-            <p>Uma política de segurança de conteúdo deixa rodar apenas os scripts do próprio site e só permite conexões com a agenda e o mapa do Google.</p>
-          </li>
-          <li>
-            <h3>Imagens leves, código sem excesso</h3>
-            <p>As fotos da barbearia foram convertidas para WebP e somam cerca de 1,4 MB. Os dois sites são feitos em HTML, CSS e JavaScript, sem frameworks, e funcionam no GitHub Pages.</p>
-          </li>
-          <li>
-            <h3>Instruções para quem fica com o site</h3>
-            <p>Cada projeto tem um guia em português: como publicar, onde trocar preços e avaliações e, na Maré, o que falta resolver antes de vender de verdade.</p>
-          </li>
-        </ul>
+      <div class="faixa-titulo">
+        <h2 class="rotulo" id="processo-titulo">Processo</h2>
+        <p class="faixa-titulo__frase">O que não aparece na tela.</p>
       </div>
+      <ul class="cuidados">
+        <li><h3>Agenda de teste</h3><p>Pedidos de teste nunca chegam ao cliente.</p></li>
+        <li><h3>Privacidade clara</h3><p>Quem recebe os dados, sem rastreadores.</p></li>
+        <li><h3>Segurança de conteúdo</h3><p>A página só carrega o que é dela.</p></li>
+        <li><h3>Imagens leves</h3><p>WebP e código sem frameworks.</p></li>
+        <li><h3>Guia de entrega</h3><p>Instruções em português para o dono.</p></li>
+      </ul>
     </section>
 
-    <!-- ================= SOBRE MIM ================= -->
+    <!-- ================= SOBRE ================= -->
     <section class="sobre" id="sobre" aria-labelledby="sobre-titulo">
-      <div class="envelope sobre__grade">
-        <h2 class="rotulo" id="sobre-titulo">Sobre mim</h2>
-        <div class="sobre__texto">
-          <p class="sobre__abertura">Sou Samuel Moreira Paranhos, moro em Eldorado do Sul (RS) e desenvolvo sites.</p>
-          <p>Estou no começo. Tenho pouca experiência, e cada projeto me ensina algo que levo para o próximo. Por isso prefiro mostrar o trabalho por dentro, com o que já sei fazer e com o cuidado que coloco em cada detalhe.</p>
-          <p>Começo pela pergunta que o visitante traz (quanto custa, onde fica, como marcar, por onde começar) e deixo o resto da página a serviço da resposta. Organizo o conteúdo com quem conhece o negócio, desenho a interface, escrevo o código e publico.</p>
-        </div>
+      <h2 class="rotulo" id="sobre-titulo">Sobre mim</h2>
+      <div class="sobre__texto">
+        <p class="sobre__frase">Estou no começo, aprendendo a cada projeto e levando cada detalhe a sério.</p>
+        <p class="sobre__apoio">Moro em Eldorado do Sul (RS). Cuido do conteúdo, da interface e do código, do primeiro rascunho à publicação.</p>
       </div>
     </section>
 
-    <!-- ================= CONVERSA ================= -->
-    <section class="conversa" id="conversa" aria-labelledby="conversa-titulo">
-      <div class="envelope conversa__grade">
-        <h2 class="rotulo" id="conversa-titulo">Conversa</h2>
-        <div class="conversa__texto">
-          <p class="conversa__convite">Se o seu negócio precisa de um site, posso <span class="inteiro">construí-lo</span> com você.</p>
-          <p>Pode ser uma página que apresenta serviços e recebe pedidos, como a da barbearia, ou uma vitrine que ajuda o cliente a escolher, como a da perfumaria. Conte o que você precisa, sem compromisso. Eu mesmo respondo.</p>
-          <p class="conversa__canal" id="canal" hidden></p>
-        </div>
-      </div>
+    <!-- ================= CONTATO ================= -->
+    <section class="contato" id="contato" aria-labelledby="contato-titulo">
+      <h2 class="rotulo" id="contato-titulo">Contato</h2>
+      <p class="contato__frase">Tem um negócio que precisa de <em>um site?</em></p>
+      <p class="contato__apoio">Conte sua ideia, sem compromisso. Eu mesmo respondo.</p>
+      <div class="contato__canal" id="canal" hidden></div>
     </section>
   </main>
 
   <footer class="rodape">
-    <div class="envelope rodape__interno">
-      <p>Samuel Moreira Paranhos · <span id="ano">2026</span></p>
-      <a href="#inicio">Voltar ao início</a>
-    </div>
+    <p>Samuel Moreira Paranhos · <span id="ano">2026</span></p>
+    <p>Eldorado do Sul, RS</p>
   </footer>
+
+  <a class="topo" href="#inicio" id="voltar" aria-label="Voltar ao porta-chaves">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 11l6-6 6 6"/></svg>
+  </a>
 </body>
 </html>
