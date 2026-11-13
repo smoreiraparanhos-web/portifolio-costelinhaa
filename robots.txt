@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smoreiraparanhos-web.github.io/portifolio-costelinhaa/sitemap.xml
