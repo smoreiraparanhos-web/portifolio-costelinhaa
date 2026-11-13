@@ -1,6 +1,6 @@
 // Gera as capturas reais usadas no portfólio.
 //
-// Os dois projetos são servidos a partir de cópias locais, em "localhost".
+// Os projetos são servidos a partir de cópias locais, em "localhost".
 // Assim a Rodrigues TheBarber usa a própria agenda simulada (js/agenda-simulada.js)
 // e nenhum pedido de teste chega ao painel da barbearia. O navegador também
 // bloqueia qualquer endereço externo, exceto as fontes do Google.
@@ -10,7 +10,9 @@
 //        git clone https://github.com/smoreiraparanhos-web/rodriguesthebarber ../rodriguesthebarber
 //        git clone https://github.com/smoreiraparanhos-web/mare-de-essencias ../mare-de-essencias
 //   2. npm install --no-save playwright   e   npx playwright install chromium
-//   3. node ferramentas/capturar-telas.mjs [caminho-rodrigues] [caminho-mare]
+//        git clone https://github.com/smoreiraparanhos-web/eletr-nicos-perfumes ../eletr-nicos-perfumes
+//   3. node ferramentas/capturar-telas.mjs [caminho-rodrigues] [caminho-mare] [caminho-bm]
+//      Para refazer só um projeto: SO=bm node ferramentas/capturar-telas.mjs  (rodrigues, mare ou bm)
 //
 // As imagens vão para assets/projetos/<projeto>/ em WebP (conversão com Python + Pillow)
 // ou PNG, se o Pillow não estiver disponível.
@@ -29,7 +31,11 @@ const { chromium } = require('playwright');
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pastaRodrigues = path.resolve(process.argv[2] || path.join(raiz, '../rodriguesthebarber'));
 const pastaMare = path.resolve(process.argv[3] || path.join(raiz, '../mare-de-essencias'));
-for (const p of [pastaRodrigues, pastaMare]) {
+const pastaBm = path.resolve(process.argv[4] || path.join(raiz, '../eletr-nicos-perfumes'));
+const so = (process.env.SO || '').split(',').filter(Boolean);
+const quer = (nome) => !so.length || so.includes(nome);
+const pastas = { rodrigues: pastaRodrigues, mare: pastaMare, bm: pastaBm };
+for (const p of Object.keys(pastas).filter(quer).map((k) => pastas[k])) {
   if (!existsSync(path.join(p, 'index.html'))) { console.error('Projeto não encontrado em', p); process.exit(1); }
 }
 
@@ -55,7 +61,11 @@ function servir(pasta, porta) {
 
 const R = 'http://localhost:8231/';
 const M = 'http://localhost:8232/';
-const servidores = [await servir(pastaRodrigues, 8231), await servir(pastaMare, 8232)];
+const B = 'http://localhost:8233/';
+const servidores = [];
+if (quer('rodrigues')) servidores.push(await servir(pastaRodrigues, 8231));
+if (quer('mare')) servidores.push(await servir(pastaMare, 8232));
+if (quer('bm')) servidores.push(await servir(pastaBm, 8233));
 
 const tmp = path.join(raiz, 'ferramentas/.capturas-tmp');
 await rm(tmp, { recursive: true, force: true });
@@ -132,7 +142,7 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
 }
 
 /* ---------------- Rodrigues TheBarber ---------------- */
-{
+if (quer('rodrigues')) {
   const { ctx, pagina } = await abrir(R, DESKTOP);
   await tela(pagina, 'rodrigues/abertura-computador', { largura: 1920 });
   await tela(pagina, 'rodrigues/placa-horario', { elemento: '.porta', largura: 1000 });
@@ -147,7 +157,7 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
   await tela(pagina, 'rodrigues/agenda-relogio', { elemento: '#agendar', espera: 1800, largura: 1920 });
   await ctx.close();
 }
-{
+if (quer('rodrigues')) {
   const { ctx, pagina } = await abrir(R, CELULAR);
   await tela(pagina, 'rodrigues/abertura-celular', { largura: 780 });
   await pagina.setViewportSize({ width: 390, height: 844 });
@@ -175,7 +185,7 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
 }
 
 /* ---------------- Maré de Essências ---------------- */
-{
+if (quer('mare')) {
   const { ctx, pagina } = await abrir(M, DESKTOP);
   await tela(pagina, 'mare/abertura-computador', { largura: 1920 });
   await tela(pagina, 'mare/familias', { elemento: '.families', largura: 1920 });
@@ -187,7 +197,7 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
   }
   await ctx.close();
 }
-{
+if (quer('mare')) {
   const { ctx, pagina } = await abrir(M, CELULAR);
   await tela(pagina, 'mare/abertura-celular', { largura: 780 });
   await rolarAte(pagina, '#guia', -10);
@@ -200,6 +210,36 @@ async function rolarAte(pagina, seletor, ajuste = 0) {
     await recorte(pagina, `mare/mare-celular-${i + 1}`, '.tide-control', '.tide-result', '.tide-copy', { espera: 700 });
     await recorte(pagina, `mare/frasco-celular-${i + 1}`, '.tide-glass', '.tide-glass', '.tide-glass', { margem: 24, largura: 520 });
   }
+  await ctx.close();
+}
+
+/* ---------------- BM Digital (estudo de catálogo) ---------------- */
+// O estudo não tem vínculo com a loja: telefone e endereço ficam fora das capturas.
+const semContato = '.barra, .topo-wa span { display: none !important; }';
+if (quer('bm')) {
+  const { ctx, pagina } = await abrir(B, DESKTOP);
+  await pagina.addStyleTag({ content: semContato });
+  await tela(pagina, 'bm/abertura-computador', { largura: 1920 });
+  await ctx.close();
+}
+if (quer('bm')) {
+  const { ctx, pagina } = await abrir(B, CELULAR);
+  await pagina.addStyleTag({ content: semContato });
+  await tela(pagina, 'bm/abertura-celular', { largura: 780 });
+  // busca com sugestões
+  await pagina.fill('#buscaCampo', 'iphone');
+  await tela(pagina, 'bm/busca-celular', { largura: 780, espera: 800 });
+  await pagina.fill('#buscaCampo', '');
+  await pagina.keyboard.press('Escape');
+  // categorias e variações de cor
+  await rolarAte(pagina, '#celulares', -70);
+  await tela(pagina, 'bm/categorias-celular', { largura: 780 });
+  // lista de consulta com dois produtos
+  await pagina.locator('#celulares .item-add').nth(0).click();
+  await pagina.locator('#celulares .item-add').nth(2).click();
+  await pagina.evaluate(() => scrollTo(0, 0));
+  await pagina.click('#sacolaBtn');
+  await tela(pagina, 'bm/lista-celular', { largura: 780, espera: 900 });
   await ctx.close();
 }
 
