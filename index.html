@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Samuel Paranhos · Sites, catálogos e soluções digitais para negócios</title>
-  <meta name="description" content="Samuel Paranhos desenvolve sites sob medida, catálogos digitais e plataformas personalizadas para pequenos negócios, comércios locais e profissionais autônomos. Eldorado do Sul, RS.">
+  <title>Samuel Paranhos · Desenvolvedor web</title>
+  <meta name="description" content="Samuel Paranhos, desenvolvedor web em Eldorado do Sul (RS). Crio sites, catálogos digitais e soluções sob medida para pequenos negócios, com HTML, CSS e JavaScript.">
   <link rel="canonical" href="https://smoreiraparanhos-web.github.io/portifolio-costelinhaa/">
-  <meta name="theme-color" content="#0b0a0d">
-  <meta property="og:title" content="Samuel Paranhos · Soluções digitais para negócios">
-  <meta property="og:description" content="Sites sob medida, catálogos digitais e plataformas personalizadas para apresentar negócios e aproximar empresas de seus clientes.">
+  <meta name="theme-color" content="#0b0912">
+  <meta property="og:title" content="Samuel Paranhos · Desenvolvedor web">
+  <meta property="og:description" content="Sites, catálogos digitais e soluções sob medida para pequenos negócios.">
   <meta property="og:url" content="https://smoreiraparanhos-web.github.io/portifolio-costelinhaa/">
   <meta property="og:image" content="https://smoreiraparanhos-web.github.io/portifolio-costelinhaa/assets/img/compartilhar.jpg">
   <meta property="og:image:width" content="1200">
@@ -19,335 +19,268 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Schibsted+Grotesk:wght@400..700&family=Space+Mono&display=swap">
-  <link rel="stylesheet" href="css/estilo.css?v=20261113-2">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Space+Mono&display=swap">
+  <link rel="stylesheet" href="css/estilo.css?v=20261113-3">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/dados.js?v=20261113-2" defer></script>
-  <script src="js/principal.js?v=20261113-2" defer></script>
+  <script src="js/dados.js?v=20261113-3" defer></script>
+  <script src="js/principal.js?v=20261113-3" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Samuel Paranhos · Soluções digitais para negócios",
+    "@type": "Person",
+    "name": "Samuel Moreira Paranhos",
+    "jobTitle": "Desenvolvedor web",
     "url": "https://smoreiraparanhos-web.github.io/portifolio-costelinhaa/",
     "image": "https://smoreiraparanhos-web.github.io/portifolio-costelinhaa/assets/img/compartilhar.jpg",
-    "description": "Desenvolvimento de sites sob medida, catálogos digitais e plataformas personalizadas para pequenos negócios.",
-    "founder": { "@type": "Person", "name": "Samuel Moreira Paranhos" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Eldorado do Sul", "addressRegion": "RS", "addressCountry": "BR" },
-    "knowsLanguage": "pt-BR"
+    "sameAs": ["https://github.com/smoreiraparanhos-web"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Eldorado do Sul", "addressRegion": "RS", "addressCountry": "BR" }
   }
   </script>
 </head>
 <body>
   <a class="pular" href="#projetos">Pular para os projetos</a>
 
-  <header class="topo">
-    <a class="marca" href="#inicio">
-      <span class="marca__nome">Samuel Paranhos</span>
-      <span class="marca__oficio">Soluções digitais para negócios</span>
-    </a>
-    <nav class="topo__nav" aria-label="Seções">
-      <a href="#projetos">Projetos</a>
-      <a href="#solucoes">Soluções</a>
-      <a href="#processo">Processo</a>
-      <a href="#sobre">Sobre</a>
-    </nav>
-    <a class="topo__contato" href="#contato">Conversar</a>
+  <!-- ================= BARRA DO TOPO ================= -->
+  <header class="topo" id="topo">
+    <div class="topo__dentro">
+      <a class="marca" href="#inicio" aria-label="Samuel Paranhos, início">
+        <svg viewBox="0 0 28 20" aria-hidden="true"><path d="M9 3 2 10l7 7M19 3l7 7-7 7M16 1l-4 18"/></svg>
+        <span>Samuel<b>Paranhos</b></span>
+      </a>
+      <button class="topo__menu" id="menu-botao" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="sr">Menu</span><span class="topo__linhas" aria-hidden="true"></span>
+      </button>
+      <nav class="menu" id="menu" aria-label="Seções">
+        <a href="#inicio" data-secao="inicio">Início</a>
+        <a href="#sobre" data-secao="sobre">Sobre</a>
+        <a href="#habilidades" data-secao="habilidades">Habilidades</a>
+        <a href="#projetos" data-secao="projetos">Projetos</a>
+        <a href="#servicos" data-secao="servicos">Serviços</a>
+        <a href="#contato" data-secao="contato">Contato</a>
+        <a class="botao botao--vermelho botao--pequeno" href="#contato">Fale comigo</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <!-- ================= APRESENTAÇÃO ================= -->
-    <section class="chegada" id="inicio" aria-labelledby="chegada-titulo">
-      <div class="chegada__texto">
-        <h1 id="chegada-titulo">Seu negócio merece uma presença digital <em>à altura</em> do que oferece.</h1>
-        <p class="chegada__frase">Crio experiências digitais para apresentar negócios, valorizar produtos e aproximar empresas de seus clientes.</p>
+    <!-- ================= INÍCIO ================= -->
+    <section class="inicio" id="inicio" aria-labelledby="inicio-titulo">
+      <div class="inicio__texto">
+        <p class="etiqueta">Desenvolvedor web</p>
+        <h1 id="inicio-titulo">Olá, eu sou <span class="nome">Samuel</span><br>Crio sites para negócios.</h1>
+        <p class="inicio__frase">Seu negócio merece uma presença digital à altura do que oferece. Desenvolvo sites, catálogos e soluções sob medida para apresentar empresas e aproximá-las de seus clientes.</p>
         <div class="acoes">
-          <a class="botao botao--claro" href="#projetos">Conhecer os projetos</a>
-          <a class="botao botao--vermelho" href="#contato">Conversar sobre um projeto</a>
+          <a class="botao botao--roxo" href="#projetos">Ver meus projetos</a>
+          <a class="botao botao--contorno" href="#contato">Conversar sobre um projeto</a>
         </div>
-      </div>
-
-      <!-- A porta e as chaves: a navegação do portfólio -->
-      <div class="acessos">
-        <a class="porta" href="#projetos" aria-label="Entrar: ver os projetos">
-          <span class="porta__luz"></span>
-          <span class="porta__folha"><span class="porta__macaneta"></span></span>
-          <span class="porta__chao"></span>
-        </a>
-        <nav class="porta-chaves" aria-label="Acessos">
-          <ul class="chaves">
-          <li style="--giro: -3deg"><a class="chave" href="#projetos" data-secao="projetos"><svg viewBox="0 0 64 190" aria-hidden="true"><circle cx="32" cy="15" r="9"/><circle cx="32" cy="52" r="21"/><circle cx="32" cy="40" r="4"/><path d="M27 76h10V176l-5 7-5-7z"/><path d="M37 104h6v8h-3v7h4v11h-7M37 146h5v8h-5"/></svg><span>Projetos</span></a></li>
-          <li style="--giro: 2deg"><a class="chave" href="#solucoes" data-secao="solucoes"><svg viewBox="0 0 64 190" aria-hidden="true"><circle cx="32" cy="15" r="9"/><path d="M32 29l22 23-22 23-22-23z"/><circle cx="32" cy="41" r="4"/><path d="M27 76h10V176l-5 7-5-7z"/><path d="M37 98h5v12h-5M37 124h7v7h-2v9h-5"/></svg><span>Soluções</span></a></li>
-          <li style="--giro: -1.5deg"><a class="chave" href="#processo" data-secao="processo"><svg viewBox="0 0 64 190" aria-hidden="true"><circle cx="32" cy="15" r="9"/><rect x="12" y="31" width="40" height="44" rx="7"/><circle cx="32" cy="41" r="4"/><path d="M27 76h10V176l-5 7-5-7z"/><path d="M37 100h5v13h-5M37 128h7v7h-2v9h-5M37 156h6v9h-6"/></svg><span>Processo</span></a></li>
-          <li style="--giro: 2.5deg"><a class="chave" href="#sobre" data-secao="sobre"><svg viewBox="0 0 64 190" aria-hidden="true"><circle cx="32" cy="15" r="9"/><path d="M32 29l20 11.5v23L32 75 12 63.5v-23z"/><circle cx="32" cy="41" r="4"/><path d="M27 76h10V176l-5 7-5-7z"/><path d="M37 108h7v6h-2v10h-5M37 138h5v7h2v9h-7"/></svg><span>Sobre</span></a></li>
-          <li style="--giro: -2deg"><a class="chave chave--acento" href="#contato" data-secao="contato"><svg viewBox="0 0 64 190" aria-hidden="true"><circle cx="32" cy="15" r="9"/><path d="M32 29c13 0 22 8 22 20 0 13-10 22-22 26-12-4-22-13-22-26 0-12 9-20 22-20z"/><circle cx="32" cy="41" r="4"/><path d="M27 76h10V176l-5 7-5-7z"/><path d="M37 98h5v6h-5M37 118h7v13h-3v6h-4M37 152h5v9h-5"/></svg><span>Contato</span></a></li>
+        <div class="tecnologias">
+          <p class="sobrelinha">Tecnologias que uso</p>
+          <ul>
+            <li><svg viewBox="0 0 32 32" role="img" aria-label="HTML"><path fill="#e44d26" d="M5 3h22l-2 22.5L16 29l-9-3.5z"/><path fill="#f16529" d="M16 5v22l7.2-2.6L24.800 5z"/><text x="16" y="21" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Arial,sans-serif">5</text></svg></li>
+            <li><svg viewBox="0 0 32 32" role="img" aria-label="CSS"><path fill="#1572b6" d="M5 3h22l-2 22.5L16 29l-9-3.5z"/><path fill="#33a9dc" d="M16 5v22l7.2-2.6L24.800 5z"/><text x="16" y="21" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Arial,sans-serif">3</text></svg></li>
+            <li><svg viewBox="0 0 32 32" role="img" aria-label="JavaScript"><rect x="3" y="3" width="26" height="26" rx="3" fill="#f7df1e"/><text x="26" y="26" text-anchor="end" font-size="13" font-weight="800" fill="#111" font-family="Arial,sans-serif">JS</text></svg></li>
+            <li><svg viewBox="0 0 32 32" role="img" aria-label="Git"><rect x="6.5" y="6.5" width="19" height="19" rx="3" transform="rotate(45 16 16)" fill="#f05033"/><path d="M12 11l5 5m0 0v6m0-6 4 4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="12" cy="11" r="1.8" fill="#fff"/><circle cx="17" cy="22" r="1.8" fill="#fff"/><circle cx="21" cy="20" r="1.8" fill="#fff"/></svg></li>
+            <li><svg viewBox="0 0 24 24" role="img" aria-label="GitHub" class="traco"><path d="M9 19c-4 1.3-4-2-6-2.5M15 22v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.600 4.600 0 0 0-1.300-3.200 4.200 4.200 0 0 0-.1-3.200s-1.100-.3-3.500 1.300a12 12 0 0 0-6.200 0C6.500 3.800 5.400 4.100 5.400 4.100a4.200 4.200 0 0 0-.1 3.200A4.600 4.600 0 0 0 4 10.5c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V22"/></svg></li>
           </ul>
-        </nav>
+        </div>
       </div>
-    </section>
 
-    <!-- ================= PROJETOS ================= -->
-    <section class="projetos" id="projetos" aria-labelledby="projetos-titulo">
-      <header class="cabeca">
-        <h2 id="projetos-titulo">Projetos selecionados</h2>
-        <p>Três trabalhos, cada um apresentado pelo que é: um site feito para um negócio real, um estudo de catálogo e uma demonstração de loja.</p>
-      </header>
-
-      <!-- Rodrigues TheBarber -->
-      <article class="sala sala--rodrigues" id="rodrigues" aria-labelledby="rodrigues-titulo">
-        <div class="sala__dentro">
-          <header class="sala__cabeca" data-revela>
-            <p class="condicao"><strong>Cliente real</strong> · Barbearia em Eldorado do Sul</p>
-            <h3 id="rodrigues-titulo">Rodrigues TheBarber</h3>
-            <p class="sala__resumo">O primeiro site de uma barbearia de um profissional só: apresenta o trabalho, mostra os preços e recebe pedidos de horário pelo celular.</p>
-            <a class="visitar" href="https://smoreiraparanhos-web.github.io/rodriguesthebarber/" target="_blank" rel="noopener">Visitar o site<span class="sr"> Rodrigues TheBarber (abre em nova aba)</span></a>
-          </header>
-        <div class="palco" data-revela>
-          <img class="palco__largo" src="assets/projetos/rodrigues/abertura-computador.webp" width="1920" height="1200" loading="lazy" decoding="async" alt="Página inicial da Rodrigues TheBarber no computador, em preto, dourado e roxo.">
-          <img class="palco__celular" src="assets/projetos/rodrigues/abertura-celular.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Página inicial no celular.">
-          <img class="palco__celular" src="assets/projetos/rodrigues/celular-precos.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Tabela de preços no celular, com o botão Agendar horário fixo na base.">
+      <div class="inicio__arte" aria-hidden="true">
+        <div class="disco"><span class="disco__iniciais" id="iniciais">SP</span><img id="foto" alt="" hidden></div>
+        <span class="pontos"></span>
+        <div class="codigo">
+          <div class="codigo__topo"><span>&lt;/&gt; código</span><i></i></div>
+<pre><code><span class="c-r">const</span> desenvolvedor = {
+  nome: <span class="c-v">"Samuel"</span>,
+  base: [<span class="c-v">"HTML"</span>, <span class="c-v">"CSS"</span>,
+    <span class="c-v">"JavaScript"</span>],
+  foco: <span class="c-v">"sites para
+    negócios locais"</span>
+};</code></pre>
         </div>
-          <div class="sala__estudo">
-            <div class="estudo" data-revela>
-              <div class="estudo__bloco">
-                <h4>O desafio</h4>
-                <p>A barbearia ainda não tinha um endereço próprio na internet. O site precisava apresentar o profissional, deixar serviços e preços à vista e tornar simples o pedido de horário.</p>
-              </div>
-              <div class="estudo__bloco">
-                <h4>O que foi construído</h4>
-                <ul>
-                  <li>Identidade em preto, dourado e roxo, com o posicionamento “aqui o casual vira chique”.</li>
-                  <li>Tabela de serviços com preços e galeria de trabalhos.</li>
-                  <li>Pedido de horário em quatro passos, com resumo antes de enviar.</li>
-                  <li>Painel privado onde o profissional recebe e confirma os pedidos.</li>
-                  <li>Botão de agendamento sempre à mão no celular.</li>
-                </ul>
-              </div>
-              <div class="estudo__bloco estudo__bloco--resultado">
-                <h4>Resultado</h4>
-                <p>Site aprovado pelo profissional e publicado.</p>
-              </div>
-            </div>
-            <figure class="demo" data-revela>
-              <div class="sequencia" data-sequencia aria-label="Pedido de horário no celular, em quatro passos">
-                <ol class="sequencia__passos">
-                  <li class="passo" data-titulo="Serviço e dia"><img src="assets/projetos/rodrigues/pedido-1.webp" width="764" height="662" loading="lazy" decoding="async" alt="Ficha com o serviço escolhido e a semana para escolher o dia."></li>
-                  <li class="passo" data-titulo="Horários por período"><img src="assets/projetos/rodrigues/pedido-2.webp" width="764" height="662" loading="lazy" decoding="async" alt="Horários livres separados em manhã, tarde e noite."></li>
-                  <li class="passo" data-titulo="Resumo antes de enviar"><img src="assets/projetos/rodrigues/pedido-3.webp" width="764" height="1352" loading="lazy" decoding="async" alt="Horário marcado e a frase de resumo acima do botão Solicitar horário."></li>
-                  <li class="passo" data-titulo="Erro explicado no campo"><img src="assets/projetos/rodrigues/pedido-4.webp" width="764" height="810" loading="lazy" decoding="async" alt="WhatsApp incompleto, com a mensagem do formato esperado abaixo do campo."></li>
-                </ol>
-              </div>
-              <figcaption><strong>Pedido de horário</strong><span data-sequencia-nome>Serviço e dia</span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </article>
-
-      <!-- BM Digital -->
-      <article class="sala sala--bm" id="bm-digital" aria-labelledby="bm-titulo">
-        <div class="sala__dentro">
-          <header class="sala__cabeca" data-revela>
-            <p class="condicao"><strong>Estudo independente</strong> · Sem vínculo com a loja</p>
-            <h3 id="bm-titulo">BM Digital Eletrônicos</h3>
-            <p class="sala__resumo">Estudo de catálogo para uma loja de eletrônicos e perfumes, feito por iniciativa própria a partir de uma loja física. Não é o site oficial da loja.</p>
-            <a class="visitar" href="https://smoreiraparanhos-web.github.io/eletr-nicos-perfumes/" target="_blank" rel="noopener">Visitar o estudo<span class="sr"> BM Digital Eletrônicos (abre em nova aba)</span></a>
-          </header>
-        <div class="palco" data-revela>
-          <img class="palco__largo" src="assets/projetos/bm/abertura-computador.webp" width="1920" height="1200" loading="lazy" decoding="async" alt="Página inicial do catálogo no computador, com busca, categorias e destaque de lançamento.">
-          <img class="palco__celular" src="assets/projetos/bm/abertura-celular.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Página inicial do catálogo no celular.">
-          <img class="palco__celular" src="assets/projetos/bm/categorias-celular.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Celulares organizados em abas, com opções de cor em cada produto.">
-        </div>
-          <div class="sala__estudo">
-            <div class="estudo" data-revela>
-              <div class="estudo__bloco">
-                <h4>O desafio</h4>
-                <p>Uma loja com muitos produtos, variações de cor e de condição, em que a venda acontece na conversa. O catálogo precisava organizar a oferta sem se passar por um carrinho de compras.</p>
-              </div>
-              <div class="estudo__bloco">
-                <h4>O que foi construído</h4>
-                <ul>
-                  <li>Produtos organizados em categorias e abas, com página própria para cada um.</li>
-                  <li>Busca com sugestões enquanto a pessoa digita.</li>
-                  <li>Lista de consulta para perguntar sobre vários produtos de uma vez.</li>
-                  <li>Mensagem pronta no WhatsApp com todos os itens da lista.</li>
-                </ul>
-              </div>
-              <div class="estudo__bloco estudo__bloco--resultado">
-                <h4>Como pode evoluir</h4>
-                <p>O catálogo foi preparado para ser atualizado por uma planilha, sem mexer no código. É a base para chegar a uma plataforma administrável pela própria loja.</p>
-              </div>
-            </div>
-            <figure class="demo" data-revela>
-              <div class="sequencia" data-sequencia aria-label="Do catálogo à conversa, em três telas">
-                <ol class="sequencia__passos">
-                  <li class="passo" data-titulo="Busca com sugestões"><img src="assets/projetos/bm/busca-celular.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Busca por iphone mostrando seis sugestões com foto e condição."></li>
-                  <li class="passo" data-titulo="Categorias e cores"><img src="assets/projetos/bm/categorias-celular.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Aba Celulares com quatro modelos e as cores disponíveis de cada um."></li>
-                  <li class="passo" data-titulo="Lista de consulta"><img src="assets/projetos/bm/lista-celular.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Lista de consulta com dois produtos e o botão Consultar todos no WhatsApp."></li>
-                </ol>
-              </div>
-              <figcaption><strong>Do catálogo à conversa</strong><span data-sequencia-nome>Busca com sugestões</span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </article>
-
-      <!-- Maré de Essências -->
-      <article class="sala sala--mare" id="mare" aria-labelledby="mare-titulo">
-        <div class="sala__dentro">
-          <header class="sala__cabeca" data-revela>
-            <p class="condicao"><strong>Projeto demonstrativo</strong> · Não é uma loja em operação</p>
-            <h3 id="mare-titulo">Maré de Essências</h3>
-            <p class="sala__resumo">Vitrine de perfumaria criada como demonstração: mostra como uma loja pode apresentar produtos e orientar a escolha de quem não conhece os termos técnicos.</p>
-            <a class="visitar" href="https://smoreiraparanhos-web.github.io/mare-de-essencias/" target="_blank" rel="noopener">Visitar a demonstração<span class="sr"> Maré de Essências (abre em nova aba)</span></a>
-          </header>
-        <div class="palco" data-revela>
-          <img class="palco__largo" src="assets/projetos/mare/abertura-computador.webp" width="1920" height="1200" loading="lazy" decoding="async" alt="Página inicial da Maré de Essências no computador, em grafite e dourado.">
-          <img class="palco__celular" src="assets/projetos/mare/abertura-celular.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Página inicial no celular.">
-          <img class="palco__celular" src="assets/projetos/mare/guia-celular.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Guia com a pirâmide olfativa no celular.">
-        </div>
-          <div class="sala__estudo">
-            <div class="estudo" data-revela>
-              <div class="estudo__bloco">
-                <h4>O desafio</h4>
-                <p>Escolher perfume pela internet é difícil: não dá para sentir o cheiro, e o vocabulário técnico afasta. A proposta foi guiar a escolha pela sensação.</p>
-              </div>
-              <div class="estudo__bloco">
-                <h4>O que foi construído</h4>
-                <ul>
-                  <li>Seletor de “maré” que sugere perfumes conforme a sensação escolhida.</li>
-                  <li>Famílias olfativas apresentadas por imagens.</li>
-                  <li>Pirâmide olfativa interativa, explicada em linguagem simples.</li>
-                  <li>Catálogo com busca e lista de favoritos.</li>
-                </ul>
-              </div>
-              <div class="estudo__bloco estudo__bloco--resultado">
-                <h4>Como pode evoluir</h4>
-                <p>A demonstração não tem preços, estoque nem pagamento. A mesma experiência pode ser desenvolvida como plataforma de vendas para um negócio real, com catálogo, pedidos e pagamento.</p>
-              </div>
-            </div>
-            <figure class="demo" data-revela>
-              <div class="escala" data-escala>
-                <ol class="escala__estados">
-                  <li class="estado" data-nome="Brisa"><img src="assets/projetos/mare/mare-celular-1.webp" width="750" height="1170" loading="lazy" decoding="async" alt="Seletor na maré Brisa, com três sugestões de perfume."></li>
-                  <li class="estado" data-nome="Jardim"><img src="assets/projetos/mare/mare-celular-2.webp" width="750" height="1170" loading="lazy" decoding="async" alt="Seletor na maré Jardim, com três sugestões de perfume."></li>
-                  <li class="estado" data-nome="Profundidade"><img src="assets/projetos/mare/mare-celular-3.webp" width="750" height="1194" loading="lazy" decoding="async" alt="Seletor na maré Profundidade, com três sugestões de perfume."></li>
-                  <li class="estado" data-nome="Âmbar"><img src="assets/projetos/mare/mare-celular-4.webp" width="750" height="1170" loading="lazy" decoding="async" alt="Seletor na maré Âmbar, com três sugestões de perfume."></li>
-                </ol>
-                <div class="escala__controle">
-                  <label for="escala-mare">Arraste para mudar a maré</label>
-                  <input id="escala-mare" type="range" min="0" max="3" step="1" value="1" aria-valuetext="Jardim">
-                </div>
-              </div>
-              <figcaption><strong>Seletor de maré</strong><span data-escala-nome>Jardim</span></figcaption>
-            </figure>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- ================= SOLUÇÕES ================= -->
-    <section class="secao faixa" id="solucoes" aria-labelledby="solucoes-titulo">
-      <header class="cabeca">
-        <h2 id="solucoes-titulo">Soluções digitais</h2>
-        <p>Três formas de trabalhar juntos, conforme o que o negócio precisa agora.</p>
-      </header>
-      <ul class="solucoes">
-        <li data-revela>
-          <h3>Presença digital</h3>
-          <p class="solucoes__para">Para quem precisa ser encontrado e levado a sério.</p>
-          <p>Um site que apresenta o negócio, os serviços e o caminho até o contato, pensado primeiro para o celular e com identidade própria.</p>
-          <p class="solucoes__itens">Sites institucionais · Apresentação profissional · Páginas comerciais</p>
-        </li>
-        <li data-revela>
-          <h3>Catálogos digitais</h3>
-          <p class="solucoes__para">Para quem vende conversando.</p>
-          <p>Os produtos ficam organizados e fáceis de encontrar, e o cliente chega ao atendimento já sabendo o que quer perguntar.</p>
-          <p class="solucoes__itens">Organização de produtos · Categorias e busca · Consultas pelo WhatsApp</p>
-        </li>
-        <li data-revela>
-          <h3>Plataformas personalizadas</h3>
-          <p class="solucoes__para">Para quando uma vitrine já não basta.</p>
-          <p>Ferramentas feitas para a rotina do negócio: o próprio dono atualiza informações, acompanha pedidos e guarda seus cadastros.</p>
-          <p class="solucoes__itens">Painéis administrativos · Cadastros e banco de dados · Funcionalidades específicas</p>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ================= PROCESSO ================= -->
-    <section class="secao" id="processo" aria-labelledby="processo-titulo">
-      <header class="cabeca">
-        <h2 id="processo-titulo">Processo de desenvolvimento</h2>
-        <p>Seis etapas, na mesma ordem em todo projeto.</p>
-      </header>
-      <ol class="etapas">
-        <li data-revela><h3>Entendimento do negócio</h3><p>Uma conversa sobre o que a empresa faz, quem ela atende e o que a solução precisa resolver.</p></li>
-        <li data-revela><h3>Planejamento da solução</h3><p>O que será entregue, em quanto tempo e em quais condições, combinado antes de começar.</p></li>
-        <li data-revela><h3>Direção visual e estrutura</h3><p>Identidade, organização do conteúdo e desenho das telas principais, para sua aprovação.</p></li>
-        <li data-revela><h3>Desenvolvimento</h3><p>Construção da solução, começando pela experiência no celular.</p></li>
-        <li data-revela><h3>Testes e validação</h3><p>Revisão em celulares, tablets e computadores, e ajustes com você dentro do que foi combinado.</p></li>
-        <li data-revela><h3>Publicação e entrega</h3><p>A solução vai ao ar e você recebe as orientações de uso.</p></li>
-      </ol>
-      <aside class="combinado" aria-labelledby="combinado-titulo" data-revela>
-        <h3 id="combinado-titulo">Escopo definido, sem surpresas</h3>
-        <p>Cada projeto tem escopo, prazo e condições de entrega definidos antes do início. Manutenção, suporte, hospedagem e atualização de conteúdo depois da entrega são serviços adicionais, contratados quando fizerem sentido para o negócio.</p>
-      </aside>
+      </div>
     </section>
 
     <!-- ================= SOBRE ================= -->
-    <section class="secao" id="sobre" aria-labelledby="sobre-titulo">
-      <div class="sobre">
-        <h2 id="sobre-titulo" class="sobre__rotulo">Sobre</h2>
-        <p class="sobre__frase" data-revela>Antes de desenhar uma tela, quero <em>entender o negócio</em>.</p>
-        <div class="sobre__texto" data-revela>
-          <p>Sou Samuel Moreira Paranhos, desenvolvedor independente em Eldorado do Sul (RS). Desenvolvo sites, catálogos e interfaces para pequenos negócios, comércios locais e profissionais autônomos.</p>
-          <p>Trabalho sozinho: quem conversa com você é quem desenvolve. Cuido dos detalhes, cumpro o que foi combinado e sigo estudando a cada projeto, porque sempre há um jeito melhor de resolver.</p>
+    <section class="faixa" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="dentro sobre">
+        <div class="sobre__texto">
+          <p class="etiqueta">Sobre mim</p>
+          <h2 id="sobre-titulo">Estou no começo da carreira e levo cada projeto a sério</h2>
+          <p>Sou Samuel Moreira Paranhos, desenvolvedor web em Eldorado do Sul (RS). Aprendo construindo: cada site que publico me ensina algo que levo para o próximo.</p>
+          <p>Antes de escrever código, procuro entender o negócio. Quem conversa com você é quem desenvolve, com atenção aos detalhes e compromisso com o que foi combinado.</p>
+          <a class="botao botao--contorno" href="#contato">Vamos conversar</a>
         </div>
+        <ul class="fatos">
+          <li><span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 3 12l5 6M16 6l5 6-5 6M14 4l-4 16"/></svg></span><div><strong>3</strong><span>projetos publicados</span></div></li>
+          <li><span class="icone icone--vermelho"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span><div><strong>1º</strong><span>site aprovado por um cliente real</span></div></li>
+          <li><span class="icone icone--vermelho"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></span><div><strong>Celular</strong><span>em primeiro lugar, em todos os projetos</span></div></li>
+          <li><span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><strong>RS</strong><span>Eldorado do Sul</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= HABILIDADES ================= -->
+    <section class="secao" id="habilidades" aria-labelledby="habilidades-titulo">
+      <header class="cabeca">
+        <p class="sobrelinha">Minhas habilidades</p>
+        <h2 id="habilidades-titulo">O que uso nos projetos</h2>
+        <p>A barra mostra em quantos dos três projetos publicados cada item foi usado.</p>
+      </header>
+      <ul class="barras">
+        <li style="--n: 3"><span>HTML</span><em>3 de 3</em><i></i></li>
+        <li style="--n: 3"><span>CSS</span><em>3 de 3</em><i></i></li>
+        <li style="--n: 3"><span>JavaScript</span><em>3 de 3</em><i></i></li>
+        <li style="--n: 3"><span>Layout para celular</span><em>3 de 3</em><i></i></li>
+        <li style="--n: 3"><span>Git e GitHub</span><em>3 de 3</em><i></i></li>
+        <li style="--n: 3"><span>Publicação no GitHub Pages</span><em>3 de 3</em><i></i></li>
+        <li style="--n: 2"><span>Busca e filtros de produtos</span><em>2 de 3</em><i></i></li>
+        <li style="--n: 2"><span>Integração com WhatsApp</span><em>2 de 3</em><i></i></li>
+        <li style="--n: 1"><span>Banco de dados (Supabase)</span><em>1 de 3</em><i></i></li>
+      </ul>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section class="faixa" id="projetos" aria-labelledby="projetos-titulo">
+      <div class="dentro">
+        <header class="cabeca">
+          <p class="sobrelinha">Projetos</p>
+          <h2 id="projetos-titulo">O que já construí</h2>
+          <p>Três trabalhos, cada um apresentado pelo que é.</p>
+        </header>
+        <ul class="projetos">
+          <li class="projeto">
+            <a class="projeto__imagem" href="https://smoreiraparanhos-web.github.io/rodriguesthebarber/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/projetos/rodrigues/abertura-computador.webp" width="1920" height="1200" loading="lazy" decoding="async" alt="">
+            </a>
+            <div class="projeto__corpo">
+              <p class="condicao condicao--real">Cliente real</p>
+              <h3>Rodrigues TheBarber</h3>
+              <p>Site de uma barbearia de Eldorado do Sul, com serviços, preços e pedido de horário pelo celular. Aprovado pelo profissional.</p>
+              <ul class="projeto__itens">
+                <li>Pedido de horário em quatro passos</li>
+                <li>Painel privado para o barbeiro confirmar os pedidos</li>
+              </ul>
+              <a class="ver" href="https://smoreiraparanhos-web.github.io/rodriguesthebarber/" target="_blank" rel="noopener">Ver projeto<span class="sr"> Rodrigues TheBarber (abre em nova aba)</span></a>
+            </div>
+          </li>
+          <li class="projeto">
+            <a class="projeto__imagem" href="https://smoreiraparanhos-web.github.io/eletr-nicos-perfumes/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/projetos/bm/abertura-computador.webp" width="1920" height="1200" loading="lazy" decoding="async" alt="">
+            </a>
+            <div class="projeto__corpo">
+              <p class="condicao">Estudo · sem vínculo com a loja</p>
+              <h3>BM Digital Eletrônicos</h3>
+              <p>Catálogo para uma loja de eletrônicos e perfumes, feito por conta própria como estudo. Não é o site oficial da loja.</p>
+              <ul class="projeto__itens">
+                <li>Categorias, busca com sugestões e página por produto</li>
+                <li>Lista de consulta enviada pronta para o WhatsApp</li>
+              </ul>
+              <a class="ver" href="https://smoreiraparanhos-web.github.io/eletr-nicos-perfumes/" target="_blank" rel="noopener">Ver projeto<span class="sr"> BM Digital Eletrônicos (abre em nova aba)</span></a>
+            </div>
+          </li>
+          <li class="projeto">
+            <a class="projeto__imagem" href="https://smoreiraparanhos-web.github.io/mare-de-essencias/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/projetos/mare/abertura-computador.webp" width="1920" height="1200" loading="lazy" decoding="async" alt="">
+            </a>
+            <div class="projeto__corpo">
+              <p class="condicao">Projeto de teste · não é uma loja ativa</p>
+              <h3>Maré de Essências</h3>
+              <p>Vitrine de perfumaria criada como demonstração. A mesma ideia pode virar uma plataforma de vendas para um negócio real.</p>
+              <ul class="projeto__itens">
+                <li>Seletor que sugere perfumes pela sensação</li>
+                <li>Catálogo com busca e lista de favoritos</li>
+              </ul>
+              <a class="ver" href="https://smoreiraparanhos-web.github.io/mare-de-essencias/" target="_blank" rel="noopener">Ver projeto<span class="sr"> Maré de Essências (abre em nova aba)</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= SERVIÇOS ================= -->
+    <section class="secao" id="servicos" aria-labelledby="servicos-titulo">
+      <header class="cabeca">
+        <p class="sobrelinha">Serviços</p>
+        <h2 id="servicos-titulo">O que posso desenvolver para o seu negócio</h2>
+      </header>
+      <ul class="servicos">
+        <li>
+          <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+          <h3>Presença digital</h3>
+          <p>Um site que apresenta o seu negócio, os serviços e o caminho até o contato, para você ser encontrado e levado a sério.</p>
+          <p class="servicos__itens">Sites institucionais · Apresentação profissional · Páginas comerciais</p>
+        </li>
+        <li>
+          <span class="icone icone--vermelho"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+          <h3>Catálogos digitais</h3>
+          <p>Produtos organizados e fáceis de encontrar, para o cliente chegar ao atendimento já sabendo o que quer.</p>
+          <p class="servicos__itens">Categorias · Busca · Consultas pelo WhatsApp</p>
+        </li>
+        <li>
+          <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></svg></span>
+          <h3>Plataformas personalizadas</h3>
+          <p>Ferramentas para a rotina do negócio: você mesmo atualiza informações, acompanha pedidos e guarda seus cadastros.</p>
+          <p class="servicos__itens">Painéis administrativos · Cadastros e banco de dados · Funções específicas</p>
+        </li>
+      </ul>
+
+      <div class="processo" id="processo">
+        <h3>Como funciona um projeto</h3>
+        <ol>
+          <li><strong>Entendimento do negócio</strong><span>Conversa sobre o que você faz e o que precisa resolver.</span></li>
+          <li><strong>Planejamento da solução</strong><span>O que será entregue, em quanto tempo e em quais condições.</span></li>
+          <li><strong>Direção visual e estrutura</strong><span>Aparência e organização, para sua aprovação.</span></li>
+          <li><strong>Desenvolvimento</strong><span>Construção, começando pelo celular.</span></li>
+          <li><strong>Testes e validação</strong><span>Revisão em celular, tablet e computador.</span></li>
+          <li><strong>Publicação e entrega</strong><span>Site no ar e orientações de uso.</span></li>
+        </ol>
+        <p class="processo__nota">Cada projeto tem escopo, prazo e condições de entrega definidos antes de começar. Manutenção, suporte, hospedagem e atualização de conteúdo depois da entrega são serviços adicionais, quando contratados.</p>
       </div>
     </section>
 
     <!-- ================= CONTATO ================= -->
-    <section class="secao faixa contato" id="contato" aria-labelledby="contato-titulo">
-      <div class="contato__chamada">
-        <h2 id="contato-titulo">Tem uma ideia ou precisa melhorar a presença digital do seu negócio?</h2>
-        <p>Conte o que você precisa. A primeira conversa serve para entender o negócio e dizer com clareza como posso ajudar.</p>
-        <div class="contato__canais" id="canais"></div>
-        <noscript><p>Fale pelo WhatsApp <a href="https://wa.me/5551996263127">(51) 99626-3127</a> ou pelo e-mail <a href="mailto:smoreiraparanhos@gmail.com">smoreiraparanhos@gmail.com</a>.</p></noscript>
-      </div>
-      <form class="formulario" id="formulario" novalidate aria-labelledby="formulario-titulo">
-        <h3 id="formulario-titulo">Solicitar um projeto</h3>
-        <div class="formulario__linha">
-          <label><span>Seu nome <b aria-hidden="true">*</b></span><input name="nome" autocomplete="name" required></label>
-          <label><span>Seu negócio</span><input name="negocio" autocomplete="organization" placeholder="Ex.: barbearia, loja, clínica"></label>
+    <section class="faixa" id="contato" aria-labelledby="contato-titulo">
+      <div class="dentro contato">
+        <div class="contato__chamada">
+          <p class="sobrelinha">Vamos trabalhar juntos</p>
+          <h2 id="contato-titulo">Tem uma ideia ou precisa melhorar a presença digital do seu negócio?</h2>
+          <p>Conte o que você precisa. A primeira conversa serve para entender o negócio e dizer com clareza como posso ajudar.</p>
+          <div id="botao-whatsapp"></div>
         </div>
-        <label><span>O que você procura</span>
-          <select name="tipo">
-            <option value="">Ainda não sei</option>
-            <option>Presença digital</option>
-            <option>Catálogo digital</option>
-            <option>Plataforma personalizada</option>
-          </select>
-        </label>
-        <label><span>Conte sobre o projeto <b aria-hidden="true">*</b></span><textarea name="mensagem" rows="4" required></textarea></label>
-        <p class="formulario__aviso" id="formulario-aviso" role="alert"></p>
-        <button class="botao botao--vermelho" type="submit">Continuar no WhatsApp</button>
-        <p class="formulario__nota" id="formulario-nota">Nada é enviado por este formulário: ele abre o WhatsApp com a mensagem pronta para você conferir e enviar.</p>
-      </form>
+
+        <form class="formulario" id="formulario" novalidate aria-labelledby="formulario-titulo">
+          <h3 id="formulario-titulo">Solicitar um projeto</h3>
+          <div class="formulario__linha">
+            <label><span>Seu nome <b aria-hidden="true">*</b></span><input name="nome" autocomplete="name" required></label>
+            <label><span>Seu negócio</span><input name="negocio" autocomplete="organization" placeholder="Ex.: barbearia, loja"></label>
+          </div>
+          <label><span>O que você procura</span>
+            <select name="tipo">
+              <option value="">Ainda não sei</option>
+              <option>Presença digital</option>
+              <option>Catálogo digital</option>
+              <option>Plataforma personalizada</option>
+            </select>
+          </label>
+          <label><span>Conte sobre o projeto <b aria-hidden="true">*</b></span><textarea name="mensagem" rows="3" required></textarea></label>
+          <p class="formulario__aviso" id="formulario-aviso" role="alert"></p>
+          <button class="botao botao--roxo" type="submit">Continuar no WhatsApp</button>
+          <p class="formulario__nota" id="formulario-nota">Nada é enviado por aqui: o formulário abre o WhatsApp com a mensagem pronta para você conferir e enviar.</p>
+        </form>
+
+        <div class="contato__canais">
+          <p class="sobrelinha">Onde me encontrar</p>
+          <ul id="canais"></ul>
+          <noscript><p>WhatsApp <a href="https://wa.me/5551996263127">(51) 99626-3127</a> · <a href="mailto:smoreiraparanhos@gmail.com">smoreiraparanhos@gmail.com</a></p></noscript>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="rodape">
-    <p><strong>Samuel Paranhos</strong> · Soluções digitais para negócios</p>
-    <p>Eldorado do Sul, RS · © <span id="ano">2026</span></p>
+    <p>© <span id="ano">2026</span> Samuel Paranhos · Eldorado do Sul, RS</p>
     <a href="#inicio">Voltar ao início</a>
   </footer>
-
-  <!-- Doca: aparece depois da apresentação e marca a seção atual -->
-  <nav class="doca" id="doca" aria-label="Navegação rápida">
-    <a href="#projetos" data-secao="projetos">Projetos</a>
-    <a href="#solucoes" data-secao="solucoes">Soluções</a>
-    <a href="#processo" data-secao="processo">Processo</a>
-    <a href="#sobre" data-secao="sobre">Sobre</a>
-    <a href="#contato" data-secao="contato" class="doca__acento">Contato</a>
-  </nav>
 </body>
 </html>
