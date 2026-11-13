@@ -52,7 +52,7 @@ A conversão para WebP usa Python com Pillow (`pip install pillow`). Confira as 
 ## Sistema visual (resumo)
 
 - **Conceito:** a porta. Na apresentação, uma porta entreaberta deixa escapar a luz e as chaves levam às seções; cada projeto é uma sala com as cores do próprio projeto.
-- **Cor:** preto e branco como base. O roxo é a luz (porta, destaques, foco); o vermelho é reservado à ação de contato.
+- **Cor:** vermelho e roxo vívidos, sempre tom sobre tom. Cada faixa (`.faixa`) tem um fundo profundo e fios, textos e destaques na mesma família: vermelho sobre vinho em Soluções, lilás sobre roxo em Processo e branco sobre vermelho vivo no Contato. Na apresentação, a porta é roxa e a luz que escapa é vermelha.
 - **Tipografia:** Fraunces nos títulos, Schibsted Grotesk no texto e Space Mono só em legendas curtas.
 - **Forma:** cantos retos, fios finos e espaço. Curvas só nas chaves e nas molduras de celular.
 - **Movimento:** a porta se abre na chegada, as chaves balançam ao passar o mouse e as seções entram suavemente. Tudo é desativado com “reduzir movimento”.
