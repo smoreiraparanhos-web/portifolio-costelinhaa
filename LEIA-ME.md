@@ -7,7 +7,7 @@ Site estático em HTML, CSS e JavaScript, sem dependências, pronto para o GitHu
 ```
 index.html                      conteúdo: início, sobre, habilidades, projetos, serviços (com o processo) e contato
 css/estilo.css                  apresentação (cores, fonte e medidas no topo, em :root)
-js/dados.js                     ← EDITE AQUI: WhatsApp, e-mail, GitHub e foto
+js/dados.js                     ← EDITE AQUI: WhatsApp, e-mail e GitHub
 js/principal.js                 comportamento: menu do celular, seção atual no menu, contato e formulário
 assets/projetos/<projeto>/      capturas reais (WebP) geradas pelo script
 assets/img/                     ícone da aba e imagem de compartilhamento
@@ -26,7 +26,6 @@ Depois abra `http://localhost:8000`.
 ## Editar
 
 - **Contato:** em `js/dados.js`. O botão do WhatsApp, a lista "Onde me encontrar" e o destino do formulário saem desses dados. Ao trocar, atualize também o `<noscript>` da seção de contato no `index.html`.
-- **Foto:** coloque uma foto quadrada em `assets/img/` e informe o caminho em `foto`, no `js/dados.js`. Sem foto, o círculo da apresentação mostra as iniciais.
 - **Formulário:** não envia nada sozinho. Ele monta a mensagem e abre o WhatsApp para a pessoa conferir e enviar.
 - **Projeto:** cada `<li class="projeto">` tem a imagem, a condição do projeto (cliente real, estudo, teste), nome, resumo, dois destaques e o link. Descreva a condição real e não inclua resultados que não possam ser comprovados.
 - **Habilidades:** cada barra mostra em quantos projetos publicados o item foi usado (`--n`, de 0 a 3). Ao publicar um projeto novo, revise os números e o divisor em `.barras i::after`, no CSS.
@@ -54,9 +53,10 @@ A conversão para WebP usa Python com Pillow (`pip install pillow`). Confira as 
 ## Sistema visual (resumo)
 
 - **Estilo:** escuro, com barra fixa no topo, apresentação pessoal e seções em cartões.
+- **Porta-chaves:** a assinatura do portfólio. Na apresentação, uma placa de metal com as iniciais gravadas segura quatro chaves de formatos diferentes; cada uma leva a uma seção e responde ao mouse e ao foco.
 - **Cor:** roxo como cor principal (botões, destaques, ícones) e vermelho como segunda cor (botão "Fale comigo", WhatsApp, cliente real). O nome e as barras usam o degradê do roxo para o vermelho.
-- **Tipografia:** Plus Jakarta Sans no texto e Space Mono no cartão de código.
-- **Movimento:** o cartão de código flutua de leve e os cartões de projeto sobem ao passar o mouse. Tudo é desativado com “reduzir movimento”.
+- **Tipografia:** Plus Jakarta Sans no texto e Space Mono nas etiquetas do porta-chaves.
+- **Movimento:** as chaves balançam ao passar o mouse e os cartões de projeto sobem ao passar o mouse. Tudo é desativado com “reduzir movimento”.
 
 ## Publicar no GitHub Pages
 

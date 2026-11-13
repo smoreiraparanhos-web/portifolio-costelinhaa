@@ -20,10 +20,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Space+Mono&display=swap">
-  <link rel="stylesheet" href="css/estilo.css?v=20261113-3">
+  <link rel="stylesheet" href="css/estilo.css?v=20261113-4">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/dados.js?v=20261113-3" defer></script>
-  <script src="js/principal.js?v=20261113-3" defer></script>
+  <script src="js/dados.js?v=20261113-4" defer></script>
+  <script src="js/principal.js?v=20261113-4" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,6 +39,23 @@
 </head>
 <body>
   <a class="pular" href="#projetos">Pular para os projetos</a>
+
+  <svg class="oculto" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="aco" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="#3a3245"/>
+        <stop offset=".38" stop-color="#8d80a3"/>
+        <stop offset=".55" stop-color="#d6ccea"/>
+        <stop offset=".72" stop-color="#7d7092"/>
+        <stop offset="1" stop-color="#342c3e"/>
+      </linearGradient>
+      <linearGradient id="argola" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stop-color="#e2d8f0"/>
+        <stop offset=".5" stop-color="#6f6382"/>
+        <stop offset="1" stop-color="#b9adcc"/>
+      </linearGradient>
+    </defs>
+  </svg>
 
   <!-- ================= BARRA DO TOPO ================= -->
   <header class="topo" id="topo">
@@ -85,20 +102,59 @@
         </div>
       </div>
 
-      <div class="inicio__arte" aria-hidden="true">
-        <div class="disco"><span class="disco__iniciais" id="iniciais">SP</span><img id="foto" alt="" hidden></div>
-        <span class="pontos"></span>
-        <div class="codigo">
-          <div class="codigo__topo"><span>&lt;/&gt; código</span><i></i></div>
-<pre><code><span class="c-r">const</span> desenvolvedor = {
-  nome: <span class="c-v">"Samuel"</span>,
-  base: [<span class="c-v">"HTML"</span>, <span class="c-v">"CSS"</span>,
-    <span class="c-v">"JavaScript"</span>],
-  foco: <span class="c-v">"sites para
-    negócios locais"</span>
-};</code></pre>
+      <!-- Porta-chaves: atalhos para as seções -->
+      <nav class="cartao-chaves" aria-labelledby="chaves-titulo">
+        <div class="cartao-chaves__topo">
+          <span id="chaves-titulo">// porta-chaves</span>
+          <span class="cartao-chaves__selo">4 acessos</span>
         </div>
-      </div>
+        <div class="porta-chaves">
+          <div class="placa" aria-hidden="true"><span class="placa__parafuso"></span><span class="placa__gravacao">S · M · P</span><span class="placa__parafuso"></span></div>
+          <ul class="chaves">
+            <li style="--giro: -3deg"><a class="chave" href="#sobre"><svg class="chave__metal" viewBox="0 0 64 200" aria-hidden="true">
+                  <circle class="chave__argola" cx="32" cy="17" r="11"/>
+                  <path d="M32 29l20 11.5v23L32 75 12 63.5v-23z" fill="url(#aco)"/>
+                  <path d="M32 35l15 8.6v17.8L32 70l-15-8.6V43.6z" fill="none" stroke="#fff" stroke-opacity=".18"/>
+                  <circle cx="32" cy="38" r="5" class="chave__furo"/>
+                  <rect x="23" y="74" width="18" height="8" rx="2" fill="url(#aco)"/>
+                  <path d="M27 82h10v100l-5 7-5-7z" fill="url(#aco)"/>
+                  <path d="M37 108h7v6h-2v10h-5zM37 136h5v7h2v9h-7zM37 166h5v9h-5z" fill="url(#aco)"/>
+                  <path d="M29.5 85v94" stroke="#fff" stroke-opacity=".28"/>
+                </svg><span class="chave__nome">Sobre</span></a></li>
+            <li style="--giro: 2deg"><a class="chave" href="#projetos"><svg class="chave__metal" viewBox="0 0 64 200" aria-hidden="true">
+                  <circle class="chave__argola" cx="32" cy="17" r="11"/>
+                  <circle cx="32" cy="52" r="22" fill="url(#aco)"/>
+                  <circle cx="32" cy="52" r="17" fill="none" stroke="#fff" stroke-opacity=".18"/>
+                  <circle cx="32" cy="35" r="5" class="chave__furo"/>
+                  <rect x="23" y="72" width="18" height="9" rx="2" fill="url(#aco)"/>
+                  <path d="M27 81h10v96l-5 7-5-7z" fill="url(#aco)"/>
+                  <path d="M37 104h6v8h-3v7h4v11h-7zM37 146h5v8h-5zM37 160h7v9h-3v5h-4z" fill="url(#aco)"/>
+                  <path d="M29.5 84v90" stroke="#fff" stroke-opacity=".28"/>
+                </svg><span class="chave__nome">Projetos</span></a></li>
+            <li style="--giro: -1.5deg"><a class="chave" href="#servicos"><svg class="chave__metal" viewBox="0 0 64 200" aria-hidden="true">
+                  <circle class="chave__argola" cx="32" cy="17" r="11"/>
+                  <rect x="11" y="31" width="42" height="42" rx="12" fill="url(#aco)"/>
+                  <rect x="16" y="36" width="32" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".18"/>
+                  <circle cx="32" cy="38" r="5" class="chave__furo"/>
+                  <rect x="23" y="73" width="18" height="8" rx="2" fill="url(#aco)"/>
+                  <path d="M27 81h10v108l-5 7-5-7z" fill="url(#aco)"/>
+                  <path d="M37 100h5v13h-5zM37 124h7v7h-2v9h-5zM37 158h6v15h-6z" fill="url(#aco)"/>
+                  <path d="M29.5 84v102" stroke="#fff" stroke-opacity=".28"/>
+                </svg><span class="chave__nome">Serviços</span></a></li>
+            <li style="--giro: 3deg"><a class="chave chave--acento" href="#contato"><svg class="chave__metal" viewBox="0 0 64 200" aria-hidden="true">
+                  <circle class="chave__argola" cx="32" cy="17" r="11"/>
+                  <path d="M32 29c13 0 22 8 22 20 0 13-10 22-22 26-12-4-22-13-22-26 0-12 9-20 22-20z" fill="url(#aco)"/>
+                  <path d="M32 35c9.5 0 16 5.8 16 14.6 0 9.4-7.3 16-16 19-8.7-3-16-9.6-16-19C16 40.8 22.5 35 32 35z" fill="none" stroke="#fff" stroke-opacity=".18"/>
+                  <circle cx="32" cy="38" r="5" class="chave__furo"/>
+                  <rect x="23" y="74" width="18" height="8" rx="2" fill="url(#aco)"/>
+                  <path d="M27 82h10v110l-5 7-5-7z" fill="url(#aco)"/>
+                  <path d="M37 98h5v6h-5zM37 118h7v13h-3v6h-4zM37 158h5v6h2v10h-7z" fill="url(#aco)"/>
+                  <path d="M29.5 85v104" stroke="#fff" stroke-opacity=".28"/>
+                </svg><span class="chave__nome">Contato</span></a></li>
+          </ul>
+        </div>
+        <div class="cartao-chaves__base"><span>SMP // 2026</span><span>Eldorado do Sul · RS</span></div>
+      </nav>
     </section>
 
     <!-- ================= SOBRE ================= -->

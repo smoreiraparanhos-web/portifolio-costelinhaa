@@ -10,13 +10,6 @@
   var ano = $('#ano');
   if (ano) ano.textContent = String(new Date().getFullYear());
 
-  /* ---------- foto opcional no círculo da apresentação (js/dados.js) ---------- */
-  var foto = $('#foto');
-  if (foto && dados.foto) {
-    foto.addEventListener('load', function () { foto.hidden = false; $('#iniciais').hidden = true; });
-    foto.src = dados.foto;
-  }
-
   /* ---------- menu no celular ---------- */
   var botaoMenu = $('#menu-botao');
   var menu = $('#menu');
