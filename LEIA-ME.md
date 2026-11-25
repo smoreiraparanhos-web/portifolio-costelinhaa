@@ -27,26 +27,29 @@ Depois abra `http://localhost:8000`.
 
 - **Contato:** em `js/dados.js`. O botão do WhatsApp, a lista "Onde me encontrar" e o destino do formulário saem desses dados. Ao trocar, atualize também o `<noscript>` da seção de contato no `index.html`.
 - **Formulário:** não envia nada sozinho. Ele monta a mensagem e abre o WhatsApp para a pessoa conferir e enviar.
-- **Projeto:** cada `<li class="projeto">` tem a imagem, a condição do projeto (cliente real, estudo, teste), nome, resumo, dois destaques e o link. Descreva a condição real e não inclua resultados que não possam ser comprovados.
-- **Habilidades:** cada barra mostra em quantos projetos publicados o item foi usado (`--n`, de 0 a 3). Ao publicar um projeto novo, revise os números e o divisor em `.barras i::after`, no CSS.
+- **Projeto:** os cartões ficam em dois grupos, "Para clientes" e "Projetos próprios". Cada `<li class="projeto">` tem a imagem, a condição do projeto (cliente real, proposta apresentada, projeto próprio, demonstração), nome, resumo, dois destaques e o link. Descreva a condição real e não inclua resultados que não possam ser comprovados.
+- **Habilidades:** cada barra mostra em quantos projetos do portfólio o item foi usado (`--n`). Ao incluir um projeto novo, revise os números, o texto "X de 7" e o total em `--total` (padrão 7, em `.barras i::after` no CSS).
 - **Fatos do "Sobre":** só informações verificáveis. Revise ao publicar um projeto novo.
 - **Cores e fonte:** no topo de `css/estilo.css`.
 - **Depois de mudar CSS ou JS:** troque o número `?v=` nos três links do `index.html`, para o navegador não usar a versão antiga.
 
 ## Capturas
 
-As capturas mostram as interfaces reais. O script serve os projetos em `localhost`: a Rodrigues TheBarber usa a própria agenda simulada e nenhum pedido de teste chega à barbearia. Endereços externos ficam bloqueados (exceto as fontes do Google). Nas capturas do estudo BM Digital, telefone e endereço da loja ficam ocultos, porque o estudo não tem vínculo com ela.
-
+As capturas mostram as interfaces reais. O script serve os projetos em `localhost`: a Rodrigues TheBarber usa a própria agenda simulada e nenhum pedido de teste chega à barbearia. Endereços externos ficam bloqueados (exceto as fontes do Google). 
 ```
 git clone https://github.com/smoreiraparanhos-web/rodriguesthebarber ../rodriguesthebarber
 git clone https://github.com/smoreiraparanhos-web/mare-de-essencias ../mare-de-essencias
-git clone https://github.com/smoreiraparanhos-web/eletr-nicos-perfumes ../eletr-nicos-perfumes
+git clone https://github.com/smoreiraparanhos-web/apresenta-o-Mailon-Brito2 ../apresenta-o-Mailon-Brito2
+git clone https://github.com/smoreiraparanhos-web/LS-Store ../LS-Store
+git clone https://github.com/smoreiraparanhos-web/Colher-de-prosa ../Colher-de-prosa
+git clone https://github.com/smoreiraparanhos-web/gas-de-bairro ../gas-de-bairro
+git clone https://github.com/smoreiraparanhos-web/entre-nos ../entre-nos
 npm install --no-save playwright
 npx playwright install chromium
 node ferramentas/capturar-telas.mjs
 ```
 
-Para refazer só um projeto: `SO=bm node ferramentas/capturar-telas.mjs` (`rodrigues`, `mare` ou `bm`). A página usa só a captura `abertura-computador` de cada projeto; as demais ficam disponíveis para uso futuro.
+Para refazer só um projeto: `SO=mailon node ferramentas/capturar-telas.mjs` (`rodrigues`, `mare` ou uma chave da lista `ABERTURAS` do script: `mailon`, `ls`, `colher`, `gas`, `entrenos`). Para incluir outro projeto, acrescente-o em `ABERTURAS`. A página usa só a captura `abertura-computador` de cada projeto; as demais da Rodrigues e da Maré ficam disponíveis para uso futuro.
 
 A conversão para WebP usa Python com Pillow (`pip install pillow`). Confira as imagens antes de publicar: nenhuma pode mostrar dados de clientes nem o painel interno.
 

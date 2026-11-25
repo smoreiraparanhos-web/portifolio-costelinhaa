@@ -10,9 +10,12 @@
 //        git clone https://github.com/smoreiraparanhos-web/rodriguesthebarber ../rodriguesthebarber
 //        git clone https://github.com/smoreiraparanhos-web/mare-de-essencias ../mare-de-essencias
 //   2. npm install --no-save playwright   e   npx playwright install chromium
-//        git clone https://github.com/smoreiraparanhos-web/eletr-nicos-perfumes ../eletr-nicos-perfumes
-//   3. node ferramentas/capturar-telas.mjs [caminho-rodrigues] [caminho-mare] [caminho-bm]
-//      Para refazer só um projeto: SO=bm node ferramentas/capturar-telas.mjs  (rodrigues, mare ou bm)
+//      Os demais projetos (só a tela de abertura) também ficam ao lado desta pasta, com o
+//      nome do repositório: Colher-de-prosa, gas-de-bairro, entre-nos, LS-Store e
+//      apresenta-o-Mailon-Brito2. Veja a lista ABERTURAS abaixo.
+//   3. node ferramentas/capturar-telas.mjs [caminho-rodrigues] [caminho-mare]
+//      Para refazer só um projeto: SO=mailon node ferramentas/capturar-telas.mjs
+//      (rodrigues, mare ou a chave de um item de ABERTURAS)
 //
 // As imagens vão para assets/projetos/<projeto>/ em WebP (conversão com Python + Pillow)
 // ou PNG, se o Pillow não estiver disponível.
@@ -31,10 +34,19 @@ const { chromium } = require('playwright');
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pastaRodrigues = path.resolve(process.argv[2] || path.join(raiz, '../rodriguesthebarber'));
 const pastaMare = path.resolve(process.argv[3] || path.join(raiz, '../mare-de-essencias'));
-const pastaBm = path.resolve(process.argv[4] || path.join(raiz, '../eletr-nicos-perfumes'));
 const so = (process.env.SO || '').split(',').filter(Boolean);
 const quer = (nome) => !so.length || so.includes(nome);
-const pastas = { rodrigues: pastaRodrigues, mare: pastaMare, bm: pastaBm };
+// Projetos dos quais o portfólio usa só a tela de abertura no computador.
+// chave: [pasta do repositório ao lado desta, pasta de destino em assets/projetos]
+const ABERTURAS = {
+  mailon: ['apresenta-o-Mailon-Brito2', 'mailon'],
+  ls: ['LS-Store', 'ls-stores'],
+  colher: ['Colher-de-prosa', 'colher-de-prosa'],
+  gas: ['gas-de-bairro', 'gas-de-bairro'],
+  entrenos: ['entre-nos', 'entre-nos'],
+};
+const pastas = { rodrigues: pastaRodrigues, mare: pastaMare };
+for (const [chave, [repo]] of Object.entries(ABERTURAS)) pastas[chave] = path.resolve(raiz, '..', repo);
 for (const p of Object.keys(pastas).filter(quer).map((k) => pastas[k])) {
   if (!existsSync(path.join(p, 'index.html'))) { console.error('Projeto não encontrado em', p); process.exit(1); }
 }
@@ -61,11 +73,16 @@ function servir(pasta, porta) {
 
 const R = 'http://localhost:8231/';
 const M = 'http://localhost:8232/';
-const B = 'http://localhost:8233/';
 const servidores = [];
 if (quer('rodrigues')) servidores.push(await servir(pastaRodrigues, 8231));
 if (quer('mare')) servidores.push(await servir(pastaMare, 8232));
-if (quer('bm')) servidores.push(await servir(pastaBm, 8233));
+const enderecos = {};
+let porta = 8240;
+for (const chave of Object.keys(ABERTURAS)) {
+  if (!quer(chave)) continue;
+  servidores.push(await servir(pastas[chave], porta));
+  enderecos[chave] = `http://localhost:${porta++}/`;
+}
 
 const tmp = path.join(raiz, 'ferramentas/.capturas-tmp');
 await rm(tmp, { recursive: true, force: true });
@@ -213,33 +230,11 @@ if (quer('mare')) {
   await ctx.close();
 }
 
-/* ---------------- BM Digital (estudo de catálogo) ---------------- */
-// O estudo não tem vínculo com a loja: telefone e endereço ficam fora das capturas.
-const semContato = '.barra, .topo-wa span { display: none !important; }';
-if (quer('bm')) {
-  const { ctx, pagina } = await abrir(B, DESKTOP);
-  await pagina.addStyleTag({ content: semContato });
-  await tela(pagina, 'bm/abertura-computador', { largura: 1920 });
-  await ctx.close();
-}
-if (quer('bm')) {
-  const { ctx, pagina } = await abrir(B, CELULAR);
-  await pagina.addStyleTag({ content: semContato });
-  await tela(pagina, 'bm/abertura-celular', { largura: 780 });
-  // busca com sugestões
-  await pagina.fill('#buscaCampo', 'iphone');
-  await tela(pagina, 'bm/busca-celular', { largura: 780, espera: 800 });
-  await pagina.fill('#buscaCampo', '');
-  await pagina.keyboard.press('Escape');
-  // categorias e variações de cor
-  await rolarAte(pagina, '#celulares', -70);
-  await tela(pagina, 'bm/categorias-celular', { largura: 780 });
-  // lista de consulta com dois produtos
-  await pagina.locator('#celulares .item-add').nth(0).click();
-  await pagina.locator('#celulares .item-add').nth(2).click();
-  await pagina.evaluate(() => scrollTo(0, 0));
-  await pagina.click('#sacolaBtn');
-  await tela(pagina, 'bm/lista-celular', { largura: 780, espera: 900 });
+/* ---------------- Demais projetos: só a abertura no computador ---------------- */
+for (const [chave, [, destino]] of Object.entries(ABERTURAS)) {
+  if (!quer(chave)) continue;
+  const { ctx, pagina } = await abrir(enderecos[chave], DESKTOP);
+  await tela(pagina, `${destino}/abertura-computador`, { largura: 1920 });
   await ctx.close();
 }
 

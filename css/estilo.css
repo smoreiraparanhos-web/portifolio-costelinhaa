@@ -273,12 +273,14 @@ h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.12; l
 .barras span { font-weight: 600; font-size: .9375rem; }
 .barras em { font-style: normal; font-size: .8125rem; color: var(--texto-3); }
 .barras i { grid-column: 1 / -1; position: relative; height: .35rem; border-radius: 1rem; background: var(--linha); overflow: hidden; }
-.barras i::after { content: ""; position: absolute; inset: 0; width: calc(var(--n) / 3 * 100%); border-radius: 1rem; background: linear-gradient(90deg, var(--roxo), var(--vermelho-claro)); }
+.barras i::after { content: ""; position: absolute; inset: 0; width: calc(var(--n) / var(--total, 7) * 100%); border-radius: 1rem; background: linear-gradient(90deg, var(--roxo), var(--vermelho-claro)); }
 
 /* ============================ PROJETOS ============================ */
-.projetos { display: grid; gap: 1.5rem; }
-@media (min-width: 44em) { .projetos { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 64em) { .projetos { grid-template-columns: repeat(3, 1fr); } }
+/* auto-fit: três cartões ocupam a linha toda; quatro cabem lado a lado no computador */
+.projetos { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr)); }
+.projetos + .grupo { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.grupo { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; font-size: .8125rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
+.grupo::after { content: ""; flex: 1; height: 1px; background: var(--linha); }
 .projeto {
   display: flex; flex-direction: column; overflow: hidden;
   background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio);
